@@ -26,6 +26,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
     { href: "/reports", label: "รายงานผล", show: menus.reports },
     { href: "/plans", label: "แผนดำเนินงาน", show: menus.plans },
     { href: "/admin", label: "ตั้งค่าระบบ", show: menus.admin },
+    { href: "/account", label: "บัญชีของฉัน", show: true },
   ].filter((l) => l.show);
 
   return (

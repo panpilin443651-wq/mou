@@ -1,0 +1,5781 @@
+{
+  "นธก.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การจัดทำยุทธศาสตร์ด้านลูกค้าและตลาด",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การจัดทำแผนธุรกิจของ กยท.",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารสินค้าคงคลัง",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.745,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2.3333,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการลูกค้า",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝกม.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ร้อยละการเบิกจ่ายค่าใช้จ่ายฝึกอบรม ประชุม สัมมนาภายในประทศ ของ ฝกม. (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+5.00",
+      "targetValue": 50,
+      "levels": [
+        40,
+        45,
+        50,
+        55,
+        60
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การจดทรัพย์สินทางปัญญา",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.75,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การบริหารจัดการนิติกรรมสัญญา",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารจัดการงานด้านบังคับคดี",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.8,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.6,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การเพิ่มประสิทธิภาพบุคลากรในตำแหน่งนิติกร",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝทส.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "2.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การนำเทคโนโลยีมาปรับใช้กับส่วนงาน",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2.5,
+      "weight": 20,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การกำกับดูแลข้อมูลขนาดใหญ่ (Big Data)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2,
+      "weight": 20,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝบท.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "2.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุนของ ฝบท. (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุนของ ฝบท. (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "ร้อยละการเบิกจ่ายค่าใช้จ่ายฝึกอบรม ประชุม สัมมนาภายในประเทศ ของ ฝบท. (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุนของ ฝบท. (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+5.00",
+      "targetValue": 50,
+      "levels": [
+        40,
+        45,
+        50,
+        55,
+        60
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารจัดการพัสดุครุภัณฑ์ที่เสื่อมสภาพประจำปี",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารสินทรัพย์เพื่อก่อให้เกิดรายได้",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.75,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.4167,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการอาคาร และสถานที่",
+      "dimension": "มิติด้านการบริหารจัดการผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านการบริหารจัดการผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝพก.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "การประเมินผลการตอบแทนทางสังคมจากการลงทุน (SROI)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การดำเนินงานตามโครงการที่สำคัญ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การจัดทำโฉนดต้นยางพาราเพื่อเป็นหลักประกันสินเชื่อ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การเชื่อมโยงข้อมูลแผนที่พื้นที่ยืนต้นยางพาราในระบบสารสนเทศทางภูมิศาสตร์ (GIS) กับระบบทะเบียนเกษตรกร",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.45,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการลูกค้า",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝศย.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การพัฒนางานตลาดตามระบบบริหารงานคุณภาพ ISO",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 0.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5167,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการลูกค้า",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝสผ.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "การถ่ายทอดองค์ความรู้ที่จำเป็นให้แก่เกษตรกรชาวสวนยาง",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.3",
+      "name": "โครงการส่งเสริมและพัฒนาอาชีพให้เกษตรกรชาวสวนยาง",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.4",
+      "name": "โครงการส่งเสริมนวัตกรรมเพื่อเพิ่มผลผลิตยางพารา",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.5",
+      "name": "โครงการส่งเสริมมาตรฐานวิชาชีพการทำสวนยาง",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.6",
+      "name": "โครงการส่งเสริมการจัดการสวนยางอารยเกษตร",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การยกระดับคุณภาพชีวิตของเกษตรกรชาวสวนยาง",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การพัฒนาศักยภาพเกษตรกรชาวสวนยาง",
+      "unit": "ระดับ",
+      "baselineValue": 4.9,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารจัดการลูกค้า",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.75,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจร.1": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ประสิทธิภาพในการผลิตของโรงงาน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "5",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.8,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.4091,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การขยายฐานลูกค้าใหม่",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจร.2": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ประสิทธิภาพในการผลิตของโรงงาน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.375,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5151,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การขยายฐานลูกค้าใหม่",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจร.4": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "2.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 40,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.6,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.75,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจร.5": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "2.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 40,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.9,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจร.6": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "2.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 40,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.275,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจส.1": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ผลผลิตต่อไร่ต่อปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "5",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.35,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.0273,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจส.2": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ผลผลิตต่อไร่ต่อปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "5",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.3,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2.9364,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กจส.3": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": 4.75,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "ผลผลิตต่อไร่ต่อปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "5",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพเชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการปริมาณผลผลิต",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.กอ.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.85,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.ตก.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.9,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.ตบ.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.ตล.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.85,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.น.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.7571,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.อนบ.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 1,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5667,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "กยท.ข.อนล.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ล้านบาท",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.50",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การส่งเสริม สนับสนุน และให้ความช่วยเหลือเกษตรกรชาวสวนยาง เพื่อการปลูกแทน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารจัดการคาร์บอนเครดิต (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านการบริหารงานภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.88,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.4444,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝกค.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "รายได้ค่าธรรมเนียมการส่งออก",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 5.00",
+      "targetValue": 90,
+      "levels": [
+        80,
+        85,
+        90,
+        95,
+        100
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การพัฒนาการเบิกจ่ายเงิน",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การประมาณการงบการเงินของ กยท.",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.8,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "ความพึงพอใจของผู้ชำระค่าธรรมเนียม",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.75,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝทม.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ร้อยละการเบิกจ่ายค่าใช้จ่ายฝึกอบรม ประชุม สัมมนาภายในประเทศ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+5.00",
+      "targetValue": 50,
+      "levels": [
+        40,
+        45,
+        50,
+        55,
+        60
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การสรรหาผู้ว่า กยท. (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4.1",
+      "name": "การบริหารจัดการทุนมนุษย์",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การบริหารทุนมนุษย์",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4.2",
+      "name": "การพัฒนาทุนมนุษย์",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การบริหารทุนมนุษย์",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารจัดการด้านความปลอดภัย สวัสดิภาพ อาชีวอนามัย และ สิ่งแวดล้อม อย่างเป็นระบบ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การบริหารทุนมนุษย์",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6.1",
+      "name": "การจัดการความรู้",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การสร้างระบบการจัดการความรู้และนวัตกรรมอย่างเป็นระบบ",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6.2",
+      "name": "การจัดการนวัตกรรม",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การสร้างระบบการจัดการความรู้และนวัตกรรมอย่างเป็นระบบ",
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การสร้างระบบการจัดการความรู้และนวัตกรรมอย่างเป็นระบบ",
+      "unit": "ระดับ",
+      "baselineValue": 4.7,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "ระดับความผูกพันของพนักงาน กยท.",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝยศ.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ร้อยละการเบิกจ่ายค่าใช้จ่ายฝึกอบรม ประชุม สัมมนาภายในประเทศ ของ ฝยศ. (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+5.00",
+      "targetValue": 50,
+      "levels": [
+        40,
+        45,
+        50,
+        55,
+        60
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การวางแผนเชิงกลยุทธ์ (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การบริหารความเสี่ยงและควบคุมภายในขององค์กร (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.8,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การติดตามผลความสำเร็จและคาดการณ์ผลการดำเนินงาน",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.8667,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การพัฒนาทักษะพนักงาน",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "ฝอย.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "ระดับความสำเร็จในการดำเนินงานเพื่อสร้างประสิทธิภาพ เชิงนิเวศเศรษฐกิจ (Eco-efficiency) (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "เฟคเตอร์",
+      "baselineValue": 1.5665,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การนำงานวิจัยไปใช้ประโยชน์ (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.9333,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการลูกค้า",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "สตส.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "คณะกรรมการตรวจสอบ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การวางแผนการตรวจสอบ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การให้คำปรึกษาแก่หน่วยรับตรวจ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.55,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.1,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การพัฒนาบุคลากรให้ได้ใบประกอบวิชาชีพ",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "สผว.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "2.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การกำหนดนโยบายและแนวทางปฏิบัติด้านสิทธิของผู้ถือหุ้น",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การพัฒนาศักยภาพคณะกรรมการเพื่อตอบสนองภารกิจ กยท.",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การเสริมสร้างพฤติกรรมตามคู่มือจริยธรรมจรรยาบรรณ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การประชาสัมพันธ์",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การสร้างความสัมพันธ์และแสวงหาความร่วมมือระหว่างประเทศ",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.9,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "สวย.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 8,
+      "levels": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "code": "2",
+      "name": "ผลการดำเนินงานด้านธุรกิจ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3.1",
+      "name": "ร้อยละของภาพรวมการเบิกจ่ายที่เกิดขึ้นจริงในช่วงปี",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 3,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "3.2",
+      "name": "ร้อยละความสามารถในการเบิกจ่ายตามแผน",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": "ความสามารถในการบริหารแผนลงทุน (PA)",
+      "unit": "ร้อยละ",
+      "baselineValue": 5,
+      "weight": 7,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 2.5",
+      "targetValue": 90,
+      "levels": [
+        85,
+        87.5,
+        90,
+        92.5,
+        95
+      ]
+    },
+    {
+      "code": "4",
+      "name": "การสร้างมาตรฐาน Thai Traceability (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การยกระดับอุตสาหกรรมผลิตภัณฑ์ยางพารา",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การนำงานวิจัยไปใช้ประโยชน์ (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7.1",
+      "name": "การส่งเสริมและสนับสนุนงานวิจัยเชิงพาณิชย์",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การส่งเสริมและสนับสนุนงานวิจัย",
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 2.5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7.2",
+      "name": "การส่งเสริมและสนับสนุนงานวิจัยเพื่อลดปัญหาโรคใบร่วง",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การส่งเสริมและสนับสนุนงานวิจัย",
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 2.5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": "การส่งเสริมและสนับสนุนงานวิจัย",
+      "unit": "ระดับ",
+      "baselineValue": 5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "10",
+      "name": "การบริหารจัดการลูกค้า",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "11",
+      "name": "ระดับความพึงพอใจ ความไม่พึงพอใจ และความผูกพัน",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ร้อยละ",
+      "baselineValue": null,
+      "weight": 5,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "12",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 3.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "หกป.": [
+    {
+      "code": "1",
+      "name": "ค่าใช้จ่ายบริหารต่อไร่ (PA)",
+      "dimension": "มิติด้านการเงิน",
+      "groupName": null,
+      "unit": "บาท/ไร่",
+      "baselineValue": 111.14,
+      "weight": 10,
+      "direction": "LOWER_IS_BETTER",
+      "adjustmentNote": "-/+ 8.50",
+      "targetValue": 94,
+      "levels": [
+        111,
+        102.5,
+        94,
+        85.5,
+        77
+      ]
+    },
+    {
+      "code": "2",
+      "name": "การติดตามและให้คำแนะนำการปฏิบัติตามกฎเกณฑ์",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "3",
+      "name": "การสนับสนุนการดำเนินงานด้าน GRC ขององค์กร",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "4",
+      "name": "Compliance Universe",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 2.5,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "5",
+      "name": "การประเมินคุณธรรมและความโปร่งใส่ (ITA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "6",
+      "name": "การบริหารความเสี่ยงและควบคุมภายใน (PA)",
+      "dimension": "มิติด้านกระบวนการภายใน",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.86,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "7",
+      "name": "การจัดการความรู้และนวัตกรรม (PA)",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 1.6636,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "8",
+      "name": "การพัฒนาทักษะพนักงาน",
+      "dimension": "มิติด้านการเรียนรู้และเติบโต",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": null,
+      "weight": 15,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "code": "9",
+      "name": "การบริหารจัดการผู้มีส่วนได้ส่วนเสีย (PA)",
+      "dimension": "มิติด้านผู้มีส่วนได้ส่วนเสีย",
+      "groupName": null,
+      "unit": "ระดับ",
+      "baselineValue": 4.5,
+      "weight": 10,
+      "direction": "HIGHER_IS_BETTER",
+      "adjustmentNote": "-/+ 1.00",
+      "targetValue": 3,
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ]
+}

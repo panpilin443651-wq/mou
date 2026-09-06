@@ -1,0 +1,370 @@
+// ============================================================================
+// โครงสร้างฐานข้อมูล - ระบบรายงานผลการดำเนินงานตาม MOU
+// ============================================================================
+// ไฟล์นี้คือ "พิมพ์เขียว" ของฐานข้อมูลทั้งหมด
+// แก้ไฟล์นี้แล้วรัน `npm run db:migrate` เพื่อให้ฐานข้อมูลจริงเปลี่ยนตาม
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// ค่าคงที่ (Enum) - ชุดตัวเลือกที่กำหนดไว้ตายตัว ใส่ค่าอื่นไม่ได้
+// ============================================================================
+
+enum Role {
+  ADMIN // ส่วนกลาง - จัดการทุกอย่าง สร้างตัวชี้วัดให้ส่วนงาน
+  DEPT_USER // ผู้รับผิดชอบส่วนงาน - เห็นเฉพาะของตัวเอง กรอกผลได้ แก้ตัวชี้วัดไม่ได้
+  EXECUTIVE // ผู้บริหาร - ดูได้ทุกส่วนงาน แต่แก้ไขอะไรไม่ได้
+}
+
+enum DepartmentType {
+  DIVISION // ส่วนงาน (กอง / เขต / ฝ่าย / สำนัก / สถาบัน)
+  INDEPENDENT_UNIT // หน่วยงานที่ไม่สังกัดส่วนงาน
+}
+
+/// ทิศทางของตัวชี้วัด - ใช้ตัดสินว่าค่ามากหรือน้อยคือดี
+/// เช่น "ค่าใช้จ่ายบริหารต่อไร่" ยิ่งน้อยยิ่งดี (ระดับ 5 = 77 บาท, ระดับ 1 = 111 บาท)
+/// ส่วน "จำนวนเกษตรกรที่ได้รับการพัฒนา" ยิ่งมากยิ่งดี
+enum ScoreDirection {
+  HIGHER_IS_BETTER // ค่ามาก = คะแนนสูง
+  LOWER_IS_BETTER // ค่าน้อย = คะแนนสูง
+}
+
+enum IndicatorStatus {
+  DRAFT // ส่วนกลางกำลังร่าง ส่วนงานยังไม่เห็น
+  ACTIVE // ใช้งานจริง ส่วนงานเห็นและกรอกผลได้
+  ARCHIVED // ยกเลิก/ไม่ใช้แล้ว แต่เก็บประวัติไว้
+}
+
+enum ReportStatus {
+  DRAFT // บันทึกร่างไว้ ยังแก้ได้
+  SUBMITTED // ส่งแล้ว (ไม่มีขั้นตอนอนุมัติ - ส่งแล้วถือว่าจบ)
+}
+
+enum PlanStatus {
+  PENDING // ยังไม่เริ่ม
+  IN_PROGRESS // กำลังดำเนินการ
+  DONE // ดำเนินการแล้วเสร็จ
+}
+
+// ============================================================================
+// ตารางข้อมูลพื้นฐาน
+// ============================================================================
+
+/// ส่วนงาน / หน่วยงานที่ไม่สังกัดส่วนงาน (30 หน่วย)
+model Department {
+  id   String         @id @default(cuid())
+  code String         @unique // รหัสย่อ เช่น "กจร.1", "ฝกค."
+  name String // ชื่อเต็มของส่วนงาน
+  type DepartmentType @default(DIVISION)
+
+  /// ลำดับการแสดงผลในรายการและ Dashboard
+  sortOrder Int     @default(0)
+  isActive  Boolean @default(true)
+
+  users      User[]
+  indicators Indicator[]
+  exceptions WindowException[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sortOrder])
+}
+
+/// ผู้ใช้งานระบบ - ADMIN เป็นผู้สร้างบัญชีให้ (ไม่มีการสมัครเอง)
+model User {
+  id           String @id @default(cuid())
+  email        String @unique
+  name         String
+  /// รหัสผ่านที่เข้ารหัสด้วย bcrypt แล้ว - ห้ามเก็บรหัสผ่านจริงเด็ดขาด
+  passwordHash String
+
+  role Role @default(DEPT_USER)
+
+  /// สังกัดส่วนงานไหน - ADMIN และ EXECUTIVE ไม่ต้องมีสังกัด (null)
+  /// DEPT_USER ต้องมีเสมอ เพราะใช้กรองว่าเห็นข้อมูลของใครได้บ้าง
+  departmentId String?
+  department   Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+
+  isActive    Boolean   @default(true)
+  lastLoginAt DateTime?
+
+  submittedReports QuarterlyReport[] @relation("ReportSubmitter")
+  uploadedFiles    Attachment[]
+  auditLogs        AuditLog[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([departmentId])
+}
+
+/// ปีงบประมาณ เช่น 2569 (1 ต.ค. 2568 - 30 ก.ย. 2569)
+model FiscalYear {
+  id   Int @id @default(autoincrement())
+  /// ปี พ.ศ. เช่น 2569
+  year Int @unique
+
+  startDate DateTime
+  endDate   DateTime
+
+  /// ปีที่ระบบกำลังใช้งานอยู่ - ควรมีแค่ปีเดียวที่เป็น true
+  isActive Boolean @default(false)
+
+  indicators Indicator[]
+  windows    SubmissionWindow[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============================================================================
+// ตารางหลัก - ตัวชี้วัดและองค์ประกอบ
+// ============================================================================
+
+/// ตัวชี้วัด (KPI) - สร้างโดยส่วนกลางเท่านั้น ส่วนงานแก้ไขไม่ได้
+model Indicator {
+  id String @id @default(cuid())
+
+  fiscalYearId Int
+  fiscalYear   FiscalYear @relation(fields: [fiscalYearId], references: [id], onDelete: Cascade)
+
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+
+  code        String // ลำดับตัวชี้วัดใน MOU เช่น "1", "2.1"
+  name        String // ชื่อตัวชี้วัด เช่น "ค่าใช้จ่ายบริหารต่อไร่ (PA)"
+  description String? // นิยาม / สูตรการคำนวณ / เงื่อนไข ตามที่ระบุใน MOU
+
+  /// มิติที่ตัวชี้วัดสังกัด เช่น "มิติด้านการเงิน", "มิติด้านกระบวนการภายใน"
+  /// MOU จัดกลุ่มตัวชี้วัดตามมิติ และรายงานสรุปก็แยกตามมิติเช่นกัน
+  dimension String?
+
+  /// หัวข้อกลุ่มของตัวชี้วัดย่อย เช่น ข้อ 4.1 และ 4.2 อยู่ใต้หัวข้อ
+  /// "ความสามารถในการบริหารแผนลงทุน (PA)" - null ถ้าไม่ใช่ตัวชี้วัดย่อย
+  groupName String?
+
+  unit          String // หน่วยวัด เช่น "บาท/ไร่", "ร้อยละ", "ระดับ", "ล้านบาท"
+  /// ค่าเป้าหมายหลักทั้งปี = ค่าเกณฑ์วัดระดับ 3 ตามรูปแบบ MOU ของ กยท.
+  /// ใช้เป็นตัวหารในการคำนวณ % ความก้าวหน้า
+  targetValue   Float
+  /// ผลการดำเนินงานปีก่อน (Base line 2568) - null ถ้า MOU ระบุเป็น "-"
+  baselineValue Float?
+  /// น้ำหนักของตัวชี้วัด (%) - ผลรวมทุกตัวชี้วัดของส่วนงานต้องเท่ากับ 100
+  weight        Float  @default(0)
+
+  /// ค่ามากดีหรือค่าน้อยดี - จำเป็นต่อการให้คะแนนและการคิด % ความก้าวหน้า
+  /// เช่น "ค่าใช้จ่ายบริหารต่อไร่" ค่าน้อยยิ่งดี (ระดับ 5 = 77 บาท)
+  direction ScoreDirection @default(HIGHER_IS_BETTER)
+
+  /// ข้อความ "การปรับค่าเกณฑ์วัด" จาก MOU เช่น "-/+ 8.50" (เก็บไว้อ้างอิง)
+  adjustmentNote String?
+
+  status IndicatorStatus @default(ACTIVE)
+
+  criteria ScoreCriteria[]
+  plans    ActionPlan[]
+  reports  QuarterlyReport[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /// ห้ามมีรหัสตัวชี้วัดซ้ำกันภายในส่วนงานเดียวกันในปีงบเดียวกัน
+  @@unique([fiscalYearId, departmentId, code])
+  @@index([fiscalYearId, departmentId])
+  @@index([status])
+}
+
+/// เกณฑ์คะแนน 1-5 ของแต่ละตัวชี้วัด ("ระดับค่าเป้าหมาย" ใน MOU)
+///
+/// MOU ของ กยท. กำหนดเกณฑ์เป็น "ค่าเป้าหมาย 1 ค่าต่อ 1 ระดับ" เช่น
+///   ระดับ 1 = 111.00 บาทต่อไร่ | ระดับ 3 = 94.00 | ระดับ 5 = 77.00
+/// จึงใช้ targetValue เป็นหลัก ส่วน minValue/maxValue มีไว้เผื่อตัวชี้วัด
+/// ที่กำหนดเป็นช่วงค่าแทนค่าเดี่ยว
+model ScoreCriteria {
+  id String @id @default(cuid())
+
+  indicatorId String
+  indicator   Indicator @relation(fields: [indicatorId], references: [id], onDelete: Cascade)
+
+  /// ระดับคะแนน 1-5
+  level       Int
+  description String // คำอธิบายเกณฑ์ตามที่ระบุใน MOU
+
+  /// ค่าเป้าหมายของระดับนี้ (รูปแบบหลักที่ MOU ใช้)
+  targetValue Float?
+
+  /// ช่วงค่าของเกณฑ์นี้ - ใช้เมื่อ MOU กำหนดเป็นช่วงแทนค่าเดี่ยว
+  /// null = ไม่จำกัดด้านนั้น
+  minValue Float?
+  maxValue Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([indicatorId, level])
+}
+
+/// แผนการดำเนินงานของตัวชี้วัด (รายกิจกรรม แยกตามไตรมาส)
+model ActionPlan {
+  id String @id @default(cuid())
+
+  indicatorId String
+  indicator   Indicator @relation(fields: [indicatorId], references: [id], onDelete: Cascade)
+
+  /// ไตรมาสที่วางแผนจะทำ 1-4
+  quarter        Int
+  activity       String // ชื่อกิจกรรม
+  expectedOutput String? // ผลผลิตที่คาดหวัง
+  status         PlanStatus @default(PENDING)
+  sortOrder      Int        @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([indicatorId, quarter])
+}
+
+// ============================================================================
+// ตารางหลัก - การรายงานผลรายไตรมาส
+// ============================================================================
+
+/// ผลการดำเนินงานรายไตรมาส - ส่วนงานเป็นผู้กรอก
+model QuarterlyReport {
+  id String @id @default(cuid())
+
+  indicatorId String
+  indicator   Indicator @relation(fields: [indicatorId], references: [id], onDelete: Cascade)
+
+  /// ไตรมาส 1-4
+  quarter Int
+
+  /// ผลงานที่ทำได้จริง - ส่วนงานกรอกเอง (ระบบอ่านจากไฟล์แนบไม่ได้)
+  actualValue Float?
+
+  /// % ความก้าวหน้า = actualValue / targetValue * 100 (จำกัดไม่เกิน 100)
+  /// คำนวณและบันทึกไว้ตอนกด save เพื่อให้ Dashboard ดึงไปสรุปได้เร็ว
+  progressPct Float?
+
+  /// คะแนน 1-5 ที่ได้จากการเทียบกับ ScoreCriteria
+  scoreLevel Int?
+
+  /// true = ผู้ประเมินปรับคะแนนด้วยมือ ไม่ใช่ค่าที่ระบบคำนวณ
+  scoreOverridden Boolean @default(false)
+  scoreNote       String? // เหตุผลที่ปรับคะแนน
+
+  narrative String? // คำอธิบายผลการดำเนินงาน
+
+  status        ReportStatus @default(DRAFT)
+  submittedAt   DateTime?
+  submittedById String?
+  submittedBy   User?        @relation("ReportSubmitter", fields: [submittedById], references: [id], onDelete: SetNull)
+
+  attachments Attachment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  /// 1 ตัวชี้วัด มีได้ 1 รายงานต่อ 1 ไตรมาสเท่านั้น
+  @@unique([indicatorId, quarter])
+  @@index([status])
+}
+
+/// ไฟล์แนบหลักฐานประกอบรายงาน
+/// เก็บเฉพาะข้อมูลของไฟล์ ตัวไฟล์จริงอยู่บนดิสก์ตาม storagePath
+model Attachment {
+  id String @id @default(cuid())
+
+  reportId String
+  report   QuarterlyReport @relation(fields: [reportId], references: [id], onDelete: Cascade)
+
+  originalName String // ชื่อไฟล์เดิมที่ผู้ใช้อัปโหลด (ใช้ตอนดาวน์โหลด)
+  storagePath  String // เส้นทางไฟล์จริงบนดิสก์ (ชื่อสุ่ม กันชื่อชนกัน)
+  mimeType     String
+  sizeBytes    Int
+
+  uploadedById String?
+  uploadedBy   User?    @relation(fields: [uploadedById], references: [id], onDelete: SetNull)
+  uploadedAt   DateTime @default(now())
+
+  @@index([reportId])
+}
+
+// ============================================================================
+// ตารางควบคุมการเปิด-ปิดระบบ
+// ============================================================================
+
+/// ช่วงเวลาที่เปิดให้ส่วนงานกรอกผลและแนบไฟล์ของแต่ละไตรมาส
+/// เซิร์ฟเวอร์ต้องตรวจตารางนี้ทุกครั้งก่อนบันทึกหรือรับไฟล์
+model SubmissionWindow {
+  id String @id @default(cuid())
+
+  fiscalYearId Int
+  fiscalYear   FiscalYear @relation(fields: [fiscalYearId], references: [id], onDelete: Cascade)
+
+  quarter Int // 1-4
+
+  /// เก็บเป็นเวลา UTC เสมอ แล้วค่อยแปลงเป็น Asia/Bangkok ตอนแสดงผล
+  openAt  DateTime
+  closeAt DateTime
+
+  /// ปิดฉุกเฉินทันทีโดยไม่ต้องรอถึง closeAt
+  isForceClosed Boolean @default(false)
+
+  exceptions WindowException[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([fiscalYearId, quarter])
+}
+
+/// การขยายเวลาเฉพาะส่วนงาน (กรณีขอผ่อนผัน)
+model WindowException {
+  id String @id @default(cuid())
+
+  windowId String
+  window   SubmissionWindow @relation(fields: [windowId], references: [id], onDelete: Cascade)
+
+  departmentId String
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+
+  /// เวลาปิดใหม่เฉพาะส่วนงานนี้ (ต้องช้ากว่า closeAt เดิม)
+  closeAt DateTime
+  reason  String
+
+  createdAt DateTime @default(now())
+
+  @@unique([windowId, departmentId])
+}
+
+// ============================================================================
+// ประวัติการใช้งาน
+// ============================================================================
+
+/// บันทึกว่าใครทำอะไรเมื่อไหร่ - ใช้ตรวจสอบย้อนหลัง
+model AuditLog {
+  id String @id @default(cuid())
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  action   String // เช่น "INDICATOR_CREATE", "REPORT_SUBMIT", "FILE_UPLOAD"
+  entity   String // ชื่อตาราง เช่น "Indicator"
+  entityId String?
+  detail   Json? // ข้อมูลเพิ่มเติม เช่น ค่าก่อน-หลังการแก้ไข
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([entity, entityId])
+  @@index([createdAt])
+}

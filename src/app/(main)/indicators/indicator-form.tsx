@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import Link from "next/link";
 import type { FormState } from "@/actions/indicators";
@@ -92,6 +92,14 @@ export function IndicatorForm({
   // ทิศทางคำนวณจากค่าเกณฑ์ให้อัตโนมัติ แต่ผู้ใช้แก้ทับได้
   // ถ้าค่าระดับ 5 น้อยกว่าระดับ 1 แปลว่าตัวชี้วัดนี้ค่าน้อยยิ่งดี
   const [direction, setDirection] = useState(initial.direction);
+  const directionRef = useRef<HTMLSelectElement>(null);
+
+  // React ล้างค่าในฟอร์มทุกครั้งที่ Server Action ตอบกลับ และไม่เติมค่ากลับให้ช่อง select
+  // ถ้าไม่เติมเอง เวลากดบันทึกแล้วไม่ผ่าน ทิศทางที่เลือกไว้จะกลับไปเป็นค่าแรกเงียบๆ
+  // แล้วบันทึกครั้งถัดไปจะได้ทิศทางผิด ซึ่งทำให้คะแนนของตัวชี้วัดนั้นกลับหัวทั้งหมด
+  useEffect(() => {
+    if (directionRef.current) directionRef.current.value = direction;
+  }, [state, direction]);
   const first = Number(levels[0]);
   const last = Number(levels[4]);
   const suggested =
@@ -308,6 +316,7 @@ export function IndicatorForm({
           >
             <select
               id="direction"
+              ref={directionRef}
               name="direction"
               value={direction}
               onChange={(e) => setDirection(e.target.value as typeof direction)}

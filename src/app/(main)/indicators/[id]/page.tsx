@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireUser } from "@/lib/session";
-import { canManageIndicators, canManagePlan, canViewDepartment } from "@/lib/permissions";
+import {
+  canManageIndicators,
+  canManagePlan,
+  canSubmitReport,
+  canViewDepartment,
+} from "@/lib/permissions";
 import { db } from "@/lib/db";
 import { PLAN_STATUS_CLASS, PLAN_STATUS_LABEL } from "@/lib/plan";
 
@@ -145,13 +150,17 @@ export default async function IndicatorDetailPage({
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
-        <h2 className="border-b border-slate-200 px-4 py-3 font-semibold sm:px-5">
-          ผลการดำเนินงานรายไตรมาส
-        </h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 sm:px-5">
+          <h2 className="font-semibold">ผลการดำเนินงานรายไตรมาส</h2>
+          <Link
+            href={`/reports/${indicator.id}/1`}
+            className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium transition hover:bg-slate-50"
+          >
+            {canSubmitReport(user, indicator.departmentId) ? "กรอกผล" : "ดูผลทั้งหมด"}
+          </Link>
+        </div>
         {indicator.reports.length === 0 ? (
-          <p className="px-4 py-6 text-sm text-slate-600 sm:px-5">
-            ยังไม่มีการรายงานผล (ส่วนนี้จะเปิดใช้งานใน Phase 7)
-          </p>
+          <p className="px-4 py-6 text-sm text-slate-600 sm:px-5">ยังไม่มีการรายงานผล</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[32rem] text-sm">

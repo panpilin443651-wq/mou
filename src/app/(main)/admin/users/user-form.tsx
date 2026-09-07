@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import Link from "next/link";
 import type { FormState } from "@/actions/users";
@@ -82,6 +82,14 @@ export function UserForm({
   // เก็บสิทธิ์ไว้ใน state เพื่อซ่อน/แสดงช่องสังกัดตามสิทธิ์ที่เลือก
   // ADMIN กับ EXECUTIVE ดูได้ทุกส่วนงานอยู่แล้ว จึงไม่ต้องเลือกสังกัด
   const [role, setRole] = useState(initial.role);
+  const roleRef = useRef<HTMLSelectElement>(null);
+
+  // React ล้างค่าในฟอร์มทุกครั้งที่ Server Action ตอบกลับ และไม่เติมค่ากลับให้ช่อง select
+  // ถ้าไม่เติมเอง เวลากดบันทึกแล้วไม่ผ่าน สิทธิ์ที่เลือกไว้จะกลับไปเป็นค่าแรกเงียบๆ
+  // แล้วการกดบันทึกครั้งถัดไปจะสร้างบัญชีด้วยสิทธิ์ผิดจากที่เห็นบนหน้าจอ
+  useEffect(() => {
+    if (roleRef.current) roleRef.current.value = role;
+  }, [state, role]);
 
   return (
     <form action={formAction} className="space-y-5">
@@ -134,6 +142,7 @@ export function UserForm({
           >
             <select
               id="role"
+              ref={roleRef}
               name="role"
               required
               value={role}

@@ -110,7 +110,9 @@ export function visibleMenus(actor: Actor) {
   return {
     dashboard: true,
     indicators: true,
-    reports: actor.role !== "EXECUTIVE",
+    // ผู้บริหารต้องเห็นเมนูรายงานผลด้วย เพราะเป็นคนอ่านผลเป็นหลัก
+    // หน้าเหล่านั้นจะแสดงแบบอ่านอย่างเดียวให้เอง ไม่มีปุ่มกรอกหรือแก้
+    reports: true,
     plans: true,
     admin: isAdmin,
   };

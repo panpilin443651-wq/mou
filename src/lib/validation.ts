@@ -133,6 +133,59 @@ export const actionPlanSchema = z.object({
   status: z.enum(["PENDING", "IN_PROGRESS", "DONE"]),
 });
 
+/**
+ * ผลการดำเนินงานรายไตรมาส (ข้อ 4, 5)
+ *
+ * `intent` บอกว่าผู้ใช้กด "บันทึกร่าง" หรือ "ส่งผล"
+ * ร่างยอมให้เว้นช่องผลงานจริงไว้ก่อนได้ แต่ตอนส่งต้องกรอกให้ครบ
+ * เพราะระบบอ่านตัวเลขจากไฟล์แนบเองไม่ได้ ต้องอาศัยเลขที่ส่วนงานกรอก
+ */
+export const reportSchema = z
+  .object({
+    intent: z.enum(["draft", "submit"]),
+    actualValue: z
+      .string()
+      .trim()
+      .transform((v) => (v === "" ? null : Number(v)))
+      .refine((v) => v === null || !Number.isNaN(v), "ผลงานที่ทำได้ต้องเป็นตัวเลข")
+      .nullable(),
+    narrative: z
+      .string()
+      .trim()
+      .max(3000, "คำอธิบายยาวเกินไป")
+      .transform((v) => (v === "" ? null : v))
+      .nullable(),
+    /** เว้นว่าง = ใช้คะแนนที่ระบบคำนวณให้ */
+    scoreOverride: z
+      .string()
+      .trim()
+      .refine((v) => v === "" || /^[0-5]$/.test(v), "คะแนนที่ปรับต้องอยู่ระหว่าง 0-5")
+      .transform((v) => (v === "" ? null : Number(v))),
+    scoreNote: z
+      .string()
+      .trim()
+      .max(500, "เหตุผลยาวเกินไป")
+      .transform((v) => (v === "" ? null : v))
+      .nullable(),
+  })
+  .superRefine((v, ctx) => {
+    if (v.intent === "submit" && v.actualValue === null) {
+      ctx.addIssue({
+        code: "custom",
+        message: "ต้องกรอกผลงานที่ทำได้ก่อนจึงจะส่งผลได้ (ถ้ายังไม่มีตัวเลข ให้กดบันทึกร่างไว้ก่อน)",
+        path: ["actualValue"],
+      });
+    }
+    // การปรับคะแนนด้วยมือต้องมีเหตุผลกำกับเสมอ เพื่อให้ตรวจสอบย้อนหลังได้
+    if (v.scoreOverride !== null && v.scoreNote === null) {
+      ctx.addIssue({
+        code: "custom",
+        message: "ถ้าปรับคะแนนด้วยมือ ต้องระบุเหตุผลด้วย",
+        path: ["scoreNote"],
+      });
+    }
+  });
+
 export const passwordSchema = z
   .object({
     currentPassword: z.string().min(1, "กรุณากรอกรหัสผ่านปัจจุบัน"),

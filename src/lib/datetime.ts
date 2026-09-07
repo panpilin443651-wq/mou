@@ -36,6 +36,37 @@ export function bangkokDateToUtc(dateString: string, endOfDay = false): Date | n
   );
 }
 
+/**
+ * แปลงค่าจากช่อง input type="datetime-local" (รูปแบบ "2026-01-31T23:59")
+ * ให้เป็นเวลา UTC สำหรับเก็บลงฐานข้อมูล
+ *
+ * ถือว่าเวลาที่กรอกเป็น "เวลาไทย" เสมอ ไม่ใช่เวลาของเครื่องผู้ใช้
+ * เพราะถ้าผู้ดูแลระบบเปิดหน้านี้จากเครื่องที่ตั้งโซนเวลาอื่น
+ * เวลาปิดระบบจะเพี้ยนไปทั้งองค์กร
+ */
+export function bangkokDateTimeToUtc(value: string): Date | null {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?$/);
+  if (!match) return null;
+
+  const [, y, m, d, hh, mm, ss] = match;
+  return new Date(
+    Date.UTC(
+      Number(y),
+      Number(m) - 1,
+      Number(d),
+      Number(hh) - BANGKOK_OFFSET_HOURS,
+      Number(mm),
+      ss ? Number(ss) : 0
+    )
+  );
+}
+
+/** แปลงเวลาจากฐานข้อมูล (UTC) กลับเป็นรูปแบบของช่อง datetime-local ตามเวลาไทย */
+export function utcToBangkokDateTimeInput(date: Date): string {
+  const shifted = new Date(date.getTime() + BANGKOK_OFFSET_HOURS * 3600 * 1000);
+  return shifted.toISOString().slice(0, 16);
+}
+
 /** แปลงวันที่จากฐานข้อมูล (UTC) กลับเป็น YYYY-MM-DD ตามเวลาไทย สำหรับเติมในฟอร์ม */
 export function utcToBangkokDateInput(date: Date): string {
   const shifted = new Date(date.getTime() + BANGKOK_OFFSET_HOURS * 3600 * 1000);

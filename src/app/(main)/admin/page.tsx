@@ -29,6 +29,19 @@ export default async function AdminPage() {
     ? await db.indicator.count({ where: { fiscalYearId: activeYear.id } })
     : 0;
 
+  // ไตรมาสที่เปิดรับข้อมูลอยู่ตอนนี้ ใช้บอกสถานะโดยรวมบนการ์ด
+  const now = new Date();
+  const windows = activeYear
+    ? await db.submissionWindow.findMany({
+        where: { fiscalYearId: activeYear.id },
+        orderBy: { quarter: "asc" },
+      })
+    : [];
+  const windowCount = windows.length;
+  const openQuarters = windows
+    .filter((w) => !w.isForceClosed && now >= w.openAt && now <= w.closeAt)
+    .map((w) => w.quarter);
+
   const uncoveredCount = departmentCount - coveredDepts.length;
 
   const cards = [
@@ -55,6 +68,22 @@ export default async function AdminPage() {
       warning: activeYear
         ? null
         : "ยังไม่มีปีบัญชีที่ใช้งาน หน้าตัวชี้วัดและภาพรวมจะยังไม่แสดงข้อมูล",
+      ready: true,
+    },
+    {
+      href: "/admin/windows",
+      title: "ช่วงเวลาเปิด-ปิดระบบ",
+      description:
+        "กำหนดวันเวลาที่เปิดให้ส่วนงานกรอกผลและแนบไฟล์ของแต่ละไตรมาส ปิดฉุกเฉิน และขยายเวลาเฉพาะส่วนงานที่ขอผ่อนผัน",
+      stat: activeYear
+        ? openQuarters.length > 0
+          ? `ตอนนี้เปิดรับไตรมาส ${openQuarters.join(", ")} ของปี ${activeYear.year}`
+          : `ตอนนี้ปิดรับข้อมูลทุกไตรมาสของปี ${activeYear.year}`
+        : "-",
+      warning:
+        activeYear && windowCount < 4
+          ? `ปี ${activeYear.year} ตั้งช่วงเวลาไว้แค่ ${windowCount} จาก 4 ไตรมาส`
+          : null,
       ready: true,
     },
     {
@@ -96,17 +125,6 @@ export default async function AdminPage() {
           </Link>
         ))}
 
-        <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 p-5">
-          <h2 className="font-semibold text-slate-500">ช่วงเวลาเปิด-ปิดระบบ</h2>
-          <p className="mt-1.5 text-sm text-slate-500">
-            กำหนดวันเวลาที่เปิดให้ส่วนงานกรอกผลและแนบไฟล์ของแต่ละไตรมาส
-            รวมถึงการขยายเวลาเฉพาะส่วนงาน
-          </p>
-          <p className="mt-3 text-sm font-medium text-slate-500">จะพัฒนาใน Phase 8</p>
-          <p className="mt-2 text-xs text-slate-500">
-            ตอนนี้ระบบสร้างช่วงเวลาตั้งต้นให้ 4 ไตรมาสอัตโนมัติเมื่อเพิ่มปีบัญชีใหม่
-          </p>
-        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { getCurrentUser } from "@/lib/session";
 import { canSubmitReport } from "@/lib/permissions";
 import { ALLOWED_MIME_TYPES, MAX_FILE_BYTES } from "@/lib/attachments";
+import { getWindowStatus } from "@/lib/submission-window";
 
 // ============================================================================
 // จุดออก "บัตรผ่าน" ให้เบราว์เซอร์อัปโหลดไฟล์ตรงไปที่ Vercel Blob
@@ -53,15 +54,23 @@ export async function POST(request: Request): Promise<NextResponse> {
         // 3. ตัวชี้วัดต้องมีอยู่จริง และผู้ใช้ต้องมีสิทธิ์กรอกผลของส่วนงานนั้น
         const indicator = await db.indicator.findUnique({
           where: { id: indicatorId },
-          select: { id: true, departmentId: true },
+          select: { id: true, departmentId: true, fiscalYearId: true },
         });
         if (!indicator) throw new Error("ไม่พบตัวชี้วัดนี้");
         if (!canSubmitReport(user, indicator.departmentId)) {
           throw new Error("คุณไม่มีสิทธิ์แนบไฟล์ของส่วนงานนี้");
         }
 
-        // TODO Phase 8: ตรวจ SubmissionWindow ตรงนี้ด้วย
-        // ต้องตรวจตอนออกบัตรผ่าน ไม่ใช่ตอนบันทึกข้อมูลไฟล์
+        // 4. ต้องอยู่ในช่วงที่เปิดรับข้อมูล (ข้อ 9)
+        //    ตรวจตรงนี้เพราะเป็นจุด "ออกบัตรผ่าน" ถ้าไปตรวจตอนบันทึกข้อมูลไฟล์
+        //    ไฟล์จะขึ้นไปอยู่บน Blob เรียบร้อยแล้ว ปฏิเสธทีหลังก็สายเกินไป
+        const window = await getWindowStatus({
+          fiscalYearId: indicator.fiscalYearId,
+          quarter,
+          departmentId: indicator.departmentId,
+          actor: user,
+        });
+        if (!window.canWrite) throw new Error(`แนบไฟล์ไม่ได้ — ${window.message}`);
 
         return {
           // Blob จะปฏิเสธเองถ้าไฟล์ผิดชนิดหรือใหญ่เกิน ไม่ต้องรอมาตรวจทีหลัง

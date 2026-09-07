@@ -1,0 +1,183 @@
+"use server";
+
+import { revalidatePath } from "next/cache";
+import { Prisma } from "@prisma/client";
+import { db } from "@/lib/db";
+import { requireUser } from "@/lib/session";
+import { canManageSystem } from "@/lib/permissions";
+import { bangkokDateTimeToUtc, formatThaiDateTime } from "@/lib/datetime";
+import { writeAudit, diffFields } from "@/lib/audit";
+
+// ============================================================================
+// Server Action สำหรับช่วงเวลาเปิด-ปิดรับรายงาน (ข้อ 9) - เฉพาะ ADMIN
+// ============================================================================
+// เวลาที่กรอกในฟอร์มถือเป็น "เวลาไทย" เสมอ แล้วแปลงเป็น UTC ก่อนเก็บ
+// ถ้าเก็บตรงๆ ตามโซนเวลาของเครื่องผู้กรอก เวลาปิดจะเพี้ยนไปทั้งองค์กร
+// ============================================================================
+
+export type FormState = { error: string | null; message?: string | null };
+
+export async function updateWindowAction(
+  windowId: string,
+  _prev: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const actor = await requireUser();
+  if (!canManageSystem(actor)) {
+    return { error: "คุณไม่มีสิทธิ์ตั้งช่วงเวลาเปิด-ปิดระบบ" };
+  }
+
+  const existing = await db.submissionWindow.findUnique({
+    where: { id: windowId },
+    include: { fiscalYear: { select: { year: true } } },
+  });
+  if (!existing) return { error: "ไม่พบช่วงเวลาที่จะแก้ไข" };
+
+  const openAt = bangkokDateTimeToUtc(String(formData.get("openAt") ?? ""));
+  const closeAt = bangkokDateTimeToUtc(String(formData.get("closeAt") ?? ""));
+  if (!openAt || !closeAt) return { error: "กรุณากรอกวันเวลาให้ครบทั้งเปิดและปิด" };
+  if (closeAt <= openAt) return { error: "เวลาปิดต้องอยู่หลังเวลาเปิด" };
+
+  const isForceClosed = formData.get("isForceClosed") === "true";
+
+  await db.submissionWindow.update({
+    where: { id: windowId },
+    data: { openAt, closeAt, isForceClosed },
+  });
+
+  await writeAudit({
+    userId: actor.id,
+    action: "WINDOW_UPDATE",
+    entity: "SubmissionWindow",
+    entityId: windowId,
+    detail: {
+      year: existing.fiscalYear.year,
+      quarter: existing.quarter,
+      ...diffFields(
+        {
+          openAt: existing.openAt.toISOString(),
+          closeAt: existing.closeAt.toISOString(),
+          isForceClosed: existing.isForceClosed,
+        },
+        {
+          openAt: openAt.toISOString(),
+          closeAt: closeAt.toISOString(),
+          isForceClosed,
+        }
+      ),
+    },
+  });
+
+  revalidatePath("/admin/windows");
+  revalidatePath("/reports");
+  return {
+    error: null,
+    message: `บันทึกช่วงเวลาไตรมาส ${existing.quarter} แล้ว (ปิด ${formatThaiDateTime(closeAt)})`,
+  };
+}
+
+/**
+ * ขยายเวลาให้ส่วนงานใดส่วนงานหนึ่งเป็นกรณีพิเศษ
+ *
+ * ใช้เมื่อส่วนงานขอผ่อนผัน โดยไม่ต้องเปิดระบบให้ทั้ง 30 หน่วยพร้อมกัน
+ * ขยายได้อย่างเดียว ย่นเวลาให้ปิดเร็วขึ้นไม่ได้ เพราะจะกลายเป็นการลงโทษเฉพาะหน่วย
+ */
+export async function addExceptionAction(
+  windowId: string,
+  _prev: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const actor = await requireUser();
+  if (!canManageSystem(actor)) {
+    return { error: "คุณไม่มีสิทธิ์ขยายเวลาให้ส่วนงาน" };
+  }
+
+  const window = await db.submissionWindow.findUnique({ where: { id: windowId } });
+  if (!window) return { error: "ไม่พบช่วงเวลาที่จะขยาย" };
+
+  const departmentId = String(formData.get("departmentId") ?? "").trim();
+  const reason = String(formData.get("reason") ?? "").trim();
+  const closeAt = bangkokDateTimeToUtc(String(formData.get("closeAt") ?? ""));
+
+  if (!departmentId) return { error: "กรุณาเลือกส่วนงาน" };
+  if (!closeAt) return { error: "กรุณากรอกวันเวลาปิดใหม่" };
+  if (reason.length < 4) return { error: "กรุณาระบุเหตุผลที่ขยายเวลา" };
+  if (closeAt <= window.closeAt) {
+    return {
+      error: `เวลาปิดใหม่ต้องช้ากว่าเวลาปิดเดิม (${formatThaiDateTime(window.closeAt)})`,
+    };
+  }
+
+  const department = await db.department.findUnique({
+    where: { id: departmentId },
+    select: { code: true },
+  });
+  if (!department) return { error: "ไม่พบส่วนงานที่เลือก" };
+
+  try {
+    await db.windowException.upsert({
+      where: { windowId_departmentId: { windowId, departmentId } },
+      update: { closeAt, reason },
+      create: { windowId, departmentId, closeAt, reason },
+    });
+  } catch (error) {
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      return { error: "บันทึกการขยายเวลาไม่สำเร็จ" };
+    }
+    throw error;
+  }
+
+  await writeAudit({
+    userId: actor.id,
+    action: "WINDOW_EXCEPTION_SET",
+    entity: "SubmissionWindow",
+    entityId: windowId,
+    detail: {
+      quarter: window.quarter,
+      department: department.code,
+      closeAt: closeAt.toISOString(),
+      reason,
+    },
+  });
+
+  revalidatePath("/admin/windows");
+  revalidatePath("/reports");
+  return {
+    error: null,
+    message: `ขยายเวลาให้ ${department.code} ถึง ${formatThaiDateTime(closeAt)} แล้ว`,
+  };
+}
+
+export async function removeExceptionAction(
+  exceptionId: string,
+  _prev: FormState,
+  _formData: FormData
+): Promise<FormState> {
+  const actor = await requireUser();
+  if (!canManageSystem(actor)) {
+    return { error: "คุณไม่มีสิทธิ์ยกเลิกการขยายเวลา" };
+  }
+
+  const existing = await db.windowException.findUnique({
+    where: { id: exceptionId },
+    include: {
+      department: { select: { code: true } },
+      window: { select: { quarter: true } },
+    },
+  });
+  if (!existing) return { error: "ไม่พบรายการขยายเวลานี้" };
+
+  await db.windowException.delete({ where: { id: exceptionId } });
+
+  await writeAudit({
+    userId: actor.id,
+    action: "WINDOW_EXCEPTION_REMOVE",
+    entity: "SubmissionWindow",
+    entityId: existing.windowId,
+    detail: { quarter: existing.window.quarter, department: existing.department.code },
+  });
+
+  revalidatePath("/admin/windows");
+  revalidatePath("/reports");
+  return { error: null, message: `ยกเลิกการขยายเวลาของ ${existing.department.code} แล้ว` };
+}

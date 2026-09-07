@@ -7,6 +7,7 @@ import { canSubmitReport } from "@/lib/permissions";
 import { reportSchema, firstError } from "@/lib/validation";
 import { calcProgressPct, calcScoreLevel } from "@/lib/scoring";
 import { writeAudit, diffFields } from "@/lib/audit";
+import { getWindowStatus } from "@/lib/submission-window";
 
 // ============================================================================
 // Server Action สำหรับรายงานผลรายไตรมาส (ข้อ 4, 5)
@@ -41,8 +42,17 @@ export async function saveReportAction(
     return { error: "คุณไม่มีสิทธิ์กรอกผลการดำเนินงานของส่วนงานนี้" };
   }
 
-  // TODO Phase 8: ตรวจ SubmissionWindow ตรงนี้ก่อนบันทึกทุกครั้ง
-  // ต้องตรวจที่เซิร์ฟเวอร์ ไม่ใช่แค่ซ่อนปุ่มบนหน้าจอ
+  // ตรวจช่วงเวลาเปิด-ปิดก่อนบันทึกเสมอ (ข้อ 9)
+  // ตรวจที่นี่ ไม่ใช่แค่ซ่อนปุ่มบนหน้าจอ เพราะ Server Action ถูกเรียกตรงได้
+  const window = await getWindowStatus({
+    fiscalYearId: indicator.fiscalYearId,
+    quarter,
+    departmentId: indicator.departmentId,
+    actor: user,
+  });
+  if (!window.canWrite) {
+    return { error: `บันทึกไม่ได้ — ${window.message}` };
+  }
 
   const parsed = reportSchema.safeParse({
     intent: formData.get("intent") ?? "draft",
@@ -135,7 +145,7 @@ export async function reopenReportAction(
 
   const indicator = await db.indicator.findUnique({
     where: { id: indicatorId },
-    select: { id: true, departmentId: true, code: true },
+    select: { id: true, departmentId: true, code: true, fiscalYearId: true },
   });
   if (!indicator) return { error: "ไม่พบตัวชี้วัดนี้" };
 
@@ -143,7 +153,15 @@ export async function reopenReportAction(
     return { error: "คุณไม่มีสิทธิ์แก้ไขผลการดำเนินงานของส่วนงานนี้" };
   }
 
-  // TODO Phase 8: ตรวจ SubmissionWindow ตรงนี้ด้วย
+  const window = await getWindowStatus({
+    fiscalYearId: indicator.fiscalYearId,
+    quarter,
+    departmentId: indicator.departmentId,
+    actor: user,
+  });
+  if (!window.canWrite) {
+    return { error: `ดึงกลับมาแก้ไม่ได้ — ${window.message}` };
+  }
 
   const existing = await db.quarterlyReport.findUnique({
     where: { indicatorId_quarter: { indicatorId, quarter } },

@@ -9,6 +9,7 @@ import { scoreClass, scoreLabel } from "@/lib/scoring";
 import { formatThaiDateTime } from "@/lib/datetime";
 import { fileKindLabel, formatBytes } from "@/lib/attachments";
 import { deleteAttachmentAction } from "@/actions/attachments";
+import { getWindowStatus } from "@/lib/submission-window";
 import { ReportForm } from "./report-form";
 import { ReopenButton } from "./reopen-button";
 import { UploadButton } from "./upload-button";
@@ -51,7 +52,16 @@ export default async function ReportPage({
   // ตรวจสิทธิ์การมองเห็นที่เซิร์ฟเวอร์ก่อนเสมอ
   if (!canViewDepartment(user, indicator.departmentId)) notFound();
 
-  const canEdit = canSubmitReport(user, indicator.departmentId);
+  // สิทธิ์ + ช่วงเวลา ต้องผ่านทั้งคู่จึงจะแก้ไขได้
+  // (ส่วนกลางผ่านช่วงเวลาเสมอ เพราะเป็นคนคุมการเปิด-ปิดเอง)
+  const window = await getWindowStatus({
+    fiscalYearId: indicator.fiscalYearId,
+    quarter,
+    departmentId: indicator.departmentId,
+    actor: user,
+  });
+  const hasPermission = canSubmitReport(user, indicator.departmentId);
+  const canEdit = hasPermission && window.canWrite;
   const report = indicator.reports[0] ?? null;
   const isSubmitted = report?.status === "SUBMITTED";
   const attachments = report?.attachments ?? [];
@@ -104,6 +114,36 @@ export default async function ReportPage({
           </Link>
         ))}
       </nav>
+
+      {/* สถานะช่วงเวลาเปิด-ปิดของไตรมาสนี้ (ข้อ 9) */}
+      <div
+        className={
+          window.state === "OPEN"
+            ? "rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900"
+            : "rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900"
+        }
+      >
+        <p className="font-medium">
+          {window.state === "OPEN" ? "เปิดรับข้อมูล" : "ปิดรับข้อมูล"} · {window.message}
+        </p>
+        {window.originalCloseAt && (
+          <p className="mt-0.5">
+            ส่วนงานนี้ได้รับการขยายเวลาเป็นกรณีพิเศษ (เดิมปิด{" "}
+            {formatThaiDateTime(window.originalCloseAt)})
+            {window.extensionReason && ` — ${window.extensionReason}`}
+          </p>
+        )}
+        {window.isAdminOverride && (
+          <p className="mt-0.5">
+            คุณยังแก้ไขได้เพราะเป็นส่วนกลาง แต่ผู้รับผิดชอบส่วนงานบันทึกอะไรไม่ได้แล้ว
+          </p>
+        )}
+        {!window.canWrite && hasPermission && (
+          <p className="mt-0.5">
+            ช่วงนี้จึงกรอกผล แนบไฟล์ หรือลบไฟล์ไม่ได้ ติดต่อส่วนกลางหากต้องการขยายเวลา
+          </p>
+        )}
+      </div>
 
       <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
         <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -287,8 +327,9 @@ export default async function ReportPage({
       ) : (
         <section className="space-y-3 rounded-xl border border-slate-200 bg-white p-5">
           <p className="text-sm text-slate-600">
-            คุณเปิดดูรายงานนี้ได้อย่างเดียว การกรอกผลทำได้โดยผู้รับผิดชอบส่วนงาน{" "}
-            {indicator.department.code} และส่วนกลาง
+            {hasPermission
+              ? `ตอนนี้แก้ไขไม่ได้เพราะ${window.message} ข้อมูลที่เคยบันทึกไว้ยังอยู่ครบ`
+              : `คุณเปิดดูรายงานนี้ได้อย่างเดียว การกรอกผลทำได้โดยผู้รับผิดชอบส่วนงาน ${indicator.department.code} และส่วนกลาง`}
           </p>
           {report === null ? (
             <p className="text-sm text-slate-600">ยังไม่มีการกรอกผลของไตรมาสนี้</p>

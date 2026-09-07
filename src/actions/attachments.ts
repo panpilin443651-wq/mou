@@ -7,6 +7,7 @@ import { requireUser } from "@/lib/session";
 import { canSubmitReport } from "@/lib/permissions";
 import { isAllowedMimeType, isBlobUrl, MAX_FILE_BYTES } from "@/lib/attachments";
 import { writeAudit } from "@/lib/audit";
+import { getWindowStatus } from "@/lib/submission-window";
 
 // ============================================================================
 // Server Action สำหรับไฟล์แนบหลักฐาน
@@ -36,12 +37,24 @@ export async function recordAttachmentAction(
 
   const indicator = await db.indicator.findUnique({
     where: { id: indicatorId },
-    select: { id: true, departmentId: true, code: true },
+    select: { id: true, departmentId: true, code: true, fiscalYearId: true },
   });
   if (!indicator) return { error: "ไม่พบตัวชี้วัดนี้" };
 
   if (!canSubmitReport(user, indicator.departmentId)) {
     return { error: "คุณไม่มีสิทธิ์แนบไฟล์ของส่วนงานนี้" };
+  }
+
+  // ตรวจช่วงเวลาซ้ำอีกชั้น เผื่อกรณีที่ช่วงเวลาปิดลงระหว่างที่กำลังอัปโหลดอยู่
+  const window = await getWindowStatus({
+    fiscalYearId: indicator.fiscalYearId,
+    quarter,
+    departmentId: indicator.departmentId,
+    actor: user,
+  });
+  if (!window.canWrite) {
+    await del(blobUrl).catch(() => {});
+    return { error: `แนบไฟล์ไม่ได้ — ${window.message}` };
   }
 
   // ถาม Blob เองว่าไฟล์จริงเป็นอย่างไร ไม่เชื่อค่าที่เบราว์เซอร์บอก
@@ -114,7 +127,9 @@ export async function deleteAttachmentAction(
       report: {
         select: {
           quarter: true,
-          indicator: { select: { id: true, departmentId: true, code: true } },
+          indicator: {
+            select: { id: true, departmentId: true, code: true, fiscalYearId: true },
+          },
         },
       },
     },
@@ -125,7 +140,16 @@ export async function deleteAttachmentAction(
     return { error: "คุณไม่มีสิทธิ์ลบไฟล์แนบของส่วนงานนี้" };
   }
 
-  // TODO Phase 8: ตรวจ SubmissionWindow ตรงนี้ด้วย
+  // ปิดรับข้อมูลแล้วก็ลบหลักฐานที่ส่งไปแล้วไม่ได้เช่นกัน
+  const window = await getWindowStatus({
+    fiscalYearId: attachment.report.indicator.fiscalYearId,
+    quarter: attachment.report.quarter,
+    departmentId: attachment.report.indicator.departmentId,
+    actor: user,
+  });
+  if (!window.canWrite) {
+    return { error: `ลบไฟล์ไม่ได้ — ${window.message}` };
+  }
 
   // ลบข้อมูลในฐานข้อมูลก่อน แล้วค่อยลบไฟล์จริง
   // ถ้าลบไฟล์จริงไม่สำเร็จ อย่างน้อยระบบจะไม่ค้างรายการที่กดเปิดแล้วเจอ error

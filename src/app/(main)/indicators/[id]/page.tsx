@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireUser } from "@/lib/session";
-import { canManageIndicators, canViewDepartment } from "@/lib/permissions";
+import { canManageIndicators, canManagePlan, canViewDepartment } from "@/lib/permissions";
 import { db } from "@/lib/db";
+import { PLAN_STATUS_CLASS, PLAN_STATUS_LABEL } from "@/lib/plan";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "รายละเอียดตัวชี้วัด | ระบบรายงานผล MOU" };
@@ -182,19 +183,35 @@ export default async function IndicatorDetailPage({
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
-        <h2 className="border-b border-slate-200 px-4 py-3 font-semibold sm:px-5">
-          แผนการดำเนินงาน
-        </h2>
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 sm:px-5">
+          <h2 className="font-semibold">แผนการดำเนินงาน</h2>
+          <Link
+            href={`/plans/${indicator.id}`}
+            className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium transition hover:bg-slate-50"
+          >
+            {canManagePlan(user, indicator.departmentId) ? "จัดการแผน" : "ดูแผนทั้งหมด"}
+          </Link>
+        </div>
         {indicator.plans.length === 0 ? (
           <p className="px-4 py-6 text-sm text-slate-600 sm:px-5">
-            ยังไม่มีแผนการดำเนินงาน (ส่วนนี้จะเปิดใช้งานใน Phase 6)
+            ยังไม่มีแผนการดำเนินงาน
           </p>
         ) : (
           <ul className="divide-y divide-slate-100">
             {indicator.plans.map((p) => (
-              <li key={p.id} className="px-4 py-3 text-sm sm:px-5">
-                <span className="text-slate-500">{QUARTER_LABEL[p.quarter - 1]}</span> ·{" "}
-                {p.activity}
+              <li
+                key={p.id}
+                className="flex flex-wrap items-start justify-between gap-2 px-4 py-3 text-sm sm:px-5"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="text-slate-500">{QUARTER_LABEL[p.quarter - 1]}</span> ·{" "}
+                  {p.activity}
+                </span>
+                <span
+                  className={`shrink-0 rounded px-2 py-0.5 text-xs font-medium ${PLAN_STATUS_CLASS[p.status]}`}
+                >
+                  {PLAN_STATUS_LABEL[p.status]}
+                </span>
               </li>
             ))}
           </ul>

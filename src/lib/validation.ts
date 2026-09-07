@@ -112,6 +112,27 @@ export const fiscalYearSchema = z
     path: ["endDate"],
   });
 
+/** กิจกรรมหนึ่งรายการในแผนการดำเนินงาน (ข้อ 6) */
+export const actionPlanSchema = z.object({
+  quarter: z
+    .string()
+    .trim()
+    .refine((v) => /^[1-4]$/.test(v), "ไตรมาสต้องเป็นเลข 1-4")
+    .transform(Number),
+  activity: z
+    .string()
+    .trim()
+    .min(4, "ชื่อกิจกรรมสั้นเกินไป กรุณาอธิบายให้ชัดกว่านี้")
+    .max(500, "ชื่อกิจกรรมยาวเกินไป"),
+  expectedOutput: z
+    .string()
+    .trim()
+    .max(500, "ผลผลิตที่คาดหวังยาวเกินไป")
+    .transform((v) => (v === "" ? null : v))
+    .nullable(),
+  status: z.enum(["PENDING", "IN_PROGRESS", "DONE"]),
+});
+
 export const passwordSchema = z
   .object({
     currentPassword: z.string().min(1, "กรุณากรอกรหัสผ่านปัจจุบัน"),

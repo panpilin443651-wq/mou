@@ -158,6 +158,29 @@ export default async function IndicatorDetailPage({
             </tbody>
           </table>
         </div>
+        {/* ตัวชี้วัดบางตัวใน MOU ไม่ได้เขียนเกณฑ์เป็นระดับ 1-5
+            แต่ให้คะแนนย่อยตามกิจกรรมที่ทำได้ จึงแสดงแยกไว้ตรงนี้ */}
+        {indicator.criteriaNote && (
+          <div className="border-t border-slate-200 px-4 py-4 sm:px-5">
+            <h3 className="text-sm font-semibold">ตารางให้คะแนนย่อยตาม MOU</h3>
+            <ul className="mt-2 space-y-1.5">
+              {indicator.criteriaNote.split("\n").map((line, i) => {
+                const [text, points] = line.split(" — ");
+                return (
+                  <li key={i} className="flex flex-col gap-1 text-sm sm:flex-row sm:gap-3">
+                    <span className="min-w-0 flex-1 text-slate-700">{text}</span>
+                    {points && (
+                      <span className="shrink-0 rounded bg-accent-100 px-2 py-0.5 text-xs font-medium text-accent-900">
+                        {points}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
+
         <p className="border-t border-slate-200 px-4 py-3 text-xs text-slate-500 sm:px-5">
           {isLowerBetter
             ? "ตัวชี้วัดนี้ค่าน้อยยิ่งดี ผลงานที่ต่ำกว่าจะได้คะแนนสูงกว่า"

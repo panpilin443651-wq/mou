@@ -17,7 +17,8 @@ import { db } from "../src/lib/db";
 import criteriaData from "./criteria.json";
 
 type LevelMap = Record<string, string>;
-type Entry = { levels: LevelMap; definition?: string };
+type Rubric = { text: string; points: string };
+type Entry = { levels: LevelMap; definition?: string; rubric?: Rubric[] };
 type Data = Record<string, Record<string, Entry>>;
 
 const data = criteriaData as unknown as Data;
@@ -38,6 +39,8 @@ async function main() {
   let verified = 0;
   let conflicted = 0;
   let notFound = 0;
+  let definitionsFilled = 0;
+  let rubricsFilled = 0;
   const conflicts: string[] = [];
   const missing: string[] = [];
 
@@ -67,6 +70,22 @@ async function main() {
         notFound++;
         missing.push(`${deptCode} ข้อ ${indicatorCode}`);
         continue;
+      }
+
+      // คำจำกัดความและตารางให้คะแนนย่อย เก็บที่ตัวชี้วัด ไม่ใช่ที่เกณฑ์รายระดับ
+      const indicatorPatch: { description?: string; criteriaNote?: string } = {};
+      if (entry.definition && !indicator.description) {
+        indicatorPatch.description = entry.definition;
+        definitionsFilled++;
+      }
+      if (entry.rubric?.length) {
+        indicatorPatch.criteriaNote = entry.rubric
+          .map((r) => `${r.text} — ${r.points}`)
+          .join("\n");
+        rubricsFilled++;
+      }
+      if (apply && Object.keys(indicatorPatch).length) {
+        await db.indicator.update({ where: { id: indicator.id }, data: indicatorPatch });
       }
 
       for (const [levelStr, text] of Object.entries(entry.levels)) {
@@ -111,6 +130,8 @@ async function main() {
   console.log(`ยืนยันถูกต้องด้วยตัวเลข     ${verified} รายการ`);
   console.log(`ตัวเลขไม่ตรง (ต้องตรวจมือ)  ${conflicted} รายการ`);
   console.log(`หาตัวชี้วัดในระบบไม่เจอ      ${notFound} รายการ`);
+  console.log(`เติมคำจำกัดความให้ตัวชี้วัด  ${definitionsFilled} รายการ`);
+  console.log(`เติมตารางคะแนนย่อย          ${rubricsFilled} รายการ`);
 
   if (conflicts.length) {
     console.log("\nรายการที่ตัวเลขไม่ตรง (แสดง 15 รายการแรก):");

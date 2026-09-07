@@ -65,8 +65,8 @@ export default async function IndicatorDetailPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/indicators" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
-          ← กลับไปรายการตัวชี้วัด
+        <Link href="/indicators" className="inline-flex min-h-11 items-center text-sm text-brand-800 hover:underline">
+          ← กลับไปรายการส่วนงานและหน่วยงาน
         </Link>
 
         <div className="mt-2 flex flex-wrap items-start justify-between gap-3">
@@ -138,7 +138,7 @@ export default async function IndicatorDetailPage({
                   <td className="whitespace-nowrap px-4 py-2.5 sm:px-5">
                     ระดับ {c.level}
                     {c.level === 5 && (
-                      <span className="ml-2 text-xs text-emerald-700">คะแนนเต็ม</span>
+                      <span className="ml-2 rounded bg-accent-100 px-1.5 py-0.5 text-xs font-medium text-accent-800">คะแนนเต็ม</span>
                     )}
                   </td>
                   <td className="whitespace-nowrap px-3 py-2.5 text-right tabular-nums">

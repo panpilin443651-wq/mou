@@ -35,6 +35,8 @@ yarn-error.log*
 /MOU 69 ฉบับลงนาม/
 /mou 69 ฉบับลงนาม (word)/
 /ผลการดำเนินงาน/
+/คะแนน MOU/
+/เอกสารรายงานผล/
 
 # typescript
 *.tsbuildinfo

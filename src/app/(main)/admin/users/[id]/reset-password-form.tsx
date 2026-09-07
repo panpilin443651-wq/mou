@@ -9,7 +9,7 @@ import type { FormState } from "@/actions/users";
 // เพื่อไม่ให้เผลอเปลี่ยนรหัสผ่านตอนที่ตั้งใจจะแก้แค่ชื่อหรือสังกัด
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -87,7 +87,7 @@ export function ResetPasswordForm({
         </p>
       )}
       {state.success && (
-        <p role="status" className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+        <p role="status" className="rounded-lg bg-brand-50 px-3 py-2 text-sm text-brand-800">
           ตั้งรหัสผ่านใหม่แล้ว แจ้งรหัสให้เจ้าตัวและบอกให้เปลี่ยนเองที่หน้า &quot;บัญชีของฉัน&quot;
         </p>
       )}

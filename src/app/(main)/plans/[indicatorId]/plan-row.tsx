@@ -11,7 +11,7 @@ import { PLAN_STATUS_CLASS, PLAN_STATUS_LABEL, PLAN_STATUS_OPTIONS } from "@/lib
 // ทำแบบนี้เพื่อไม่ต้องเด้งไปอีกหน้าแล้วกลับมา ซึ่งเสียเวลาเมื่อมีหลายกิจกรรม
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 px-3 py-2 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
 export type PlanRowData = {
   id: string;
@@ -27,7 +27,7 @@ function SaveButton() {
     <button
       type="submit"
       disabled={pending}
-      className="rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-lg bg-brand-700 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังบันทึก..." : "บันทึก"}
     </button>

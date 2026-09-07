@@ -33,7 +33,7 @@ export default async function FiscalYearsPage() {
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/admin" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
+        <Link href="/admin" className="inline-flex min-h-11 items-center text-sm text-brand-800 hover:underline">
           ← กลับไปหน้าตั้งค่าระบบ
         </Link>
         <h1 className="mt-2 text-xl font-bold sm:text-2xl">ปีบัญชี</h1>
@@ -72,7 +72,7 @@ export default async function FiscalYearsPage() {
                 </td>
                 <td className="whitespace-nowrap px-4 py-2.5">
                   {y.isActive ? (
-                    <span className="rounded bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-800">
+                    <span className="rounded bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-800">
                       กำลังใช้งาน
                     </span>
                   ) : (

@@ -112,9 +112,9 @@ export default async function AdminPage() {
           <Link
             key={card.href}
             href={card.href}
-            className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-emerald-600 hover:shadow"
+            className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-brand-600 hover:shadow"
           >
-            <h2 className="font-semibold text-emerald-800">{card.title}</h2>
+            <h2 className="font-semibold text-brand-800">{card.title}</h2>
             <p className="mt-1.5 text-sm text-slate-600">{card.description}</p>
             <p className="mt-3 text-sm font-medium tabular-nums">{card.stat}</p>
             {card.warning && (

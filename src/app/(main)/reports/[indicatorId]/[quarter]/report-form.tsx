@@ -13,7 +13,7 @@ import { calcProgressPct, calcScoreLevel, scoreClass, scoreLabel } from "@/lib/s
 // แต่ค่าที่บันทึกจริงคือค่าที่เซิร์ฟเวอร์คำนวณเอง ไม่ใช่ค่าที่ส่งมาจากหน้าจอ
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
 type Criteria = { level: number; targetValue: number | null };
 
@@ -26,7 +26,7 @@ function Buttons({ isSubmitted }: { isSubmitted: boolean }) {
         name="intent"
         value="submit"
         disabled={pending}
-        className="rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-lg bg-brand-700 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {pending ? "กำลังบันทึก..." : isSubmitted ? "บันทึกและส่งใหม่" : "ส่งผลการดำเนินงาน"}
       </button>
@@ -113,7 +113,7 @@ export function ReportForm({
         <div className="grid gap-3 rounded-lg bg-slate-50 p-4 sm:grid-cols-3">
           <div>
             <p className="text-xs text-slate-500">ความก้าวหน้า</p>
-            <p className="mt-0.5 text-lg font-bold tabular-nums text-emerald-800">
+            <p className="mt-0.5 text-lg font-bold tabular-nums text-brand-800">
               {pct === null ? "–" : `${pct}%`}
             </p>
           </div>
@@ -212,7 +212,7 @@ export function ReportForm({
         </p>
       )}
       {state.success && (
-        <p role="status" className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+        <p role="status" className="rounded-lg bg-brand-50 px-3 py-2 text-sm text-brand-800">
           บันทึกเรียบร้อยแล้ว
         </p>
       )}

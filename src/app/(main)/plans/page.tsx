@@ -138,7 +138,7 @@ export default async function PlansPage({
                       <td className="px-3 py-2.5">
                         <Link
                           href={`/plans/${ind.id}`}
-                          className="-my-2.5 block py-3 text-emerald-800 underline-offset-2 hover:underline"
+                          className="-my-2.5 block py-3 text-brand-800 underline-offset-2 hover:underline"
                         >
                           {ind.name}
                         </Link>

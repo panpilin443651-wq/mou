@@ -13,7 +13,7 @@ function Button() {
     <button
       type="submit"
       disabled={pending}
-      className="whitespace-nowrap rounded-lg border border-emerald-700 bg-white px-4 py-2 text-sm font-medium text-emerald-800 transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
+      className="whitespace-nowrap rounded-lg border border-brand-700 bg-white px-4 py-2 text-sm font-medium text-brand-800 transition hover:bg-brand-50 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังดึงกลับ..." : "ดึงกลับมาแก้ไข"}
     </button>

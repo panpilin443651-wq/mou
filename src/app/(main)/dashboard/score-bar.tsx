@@ -23,7 +23,7 @@ export function ScoreBar({
     >
       {/* ปลายซ้ายชิดเส้นฐานจึงไม่มน ปลายขวาซึ่งเป็นปลายข้อมูลมนเล็กน้อย */}
       <div
-        className="h-2 rounded-r bg-emerald-600"
+        className="h-2 rounded-r bg-brand-600"
         style={{ width: `${pct}%` }}
       />
     </div>

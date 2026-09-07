@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 import { Filters } from "./filters";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "ตัวชี้วัด | ระบบรายงานผล MOU" };
+export const metadata = { title: "ส่วนงานและหน่วยงานที่ไม่สังกัดส่วนงาน | ระบบรายงานผล MOU" };
 
 const PAGE_SIZE = 50;
 
@@ -79,7 +79,7 @@ export default async function IndicatorsPage({
     <div className="space-y-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h1 className="text-xl font-bold sm:text-2xl">ตัวชี้วัด</h1>
+          <h1 className="text-xl font-bold sm:text-2xl">ส่วนงานและหน่วยงานที่ไม่สังกัดส่วนงาน</h1>
           <p className="mt-1 text-sm text-slate-600">
             {fiscalYear ? `ปีบัญชี ${fiscalYear.year}` : "ยังไม่ได้ตั้งปีบัญชี"} · พบ{" "}
             {total.toLocaleString("th-TH")} รายการ
@@ -89,7 +89,7 @@ export default async function IndicatorsPage({
         {canManage && (
           <Link
             href="/indicators/new"
-            className="rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-emerald-800"
+            className="rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-brand-800"
           >
             + เพิ่มตัวชี้วัด
           </Link>
@@ -136,7 +136,7 @@ export default async function IndicatorsPage({
                     <td className="px-3 py-2.5">
                       <Link
                         href={`/indicators/${ind.id}`}
-                        className="-my-2.5 block py-3 text-emerald-800 underline-offset-2 hover:underline"
+                        className="-my-2.5 block py-3 text-brand-800 underline-offset-2 hover:underline"
                       >
                         {ind.name}
                       </Link>

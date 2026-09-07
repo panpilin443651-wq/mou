@@ -11,7 +11,7 @@ import { createFiscalYearAction, type FormState } from "@/actions/fiscal-years";
 // ฟอร์มจึงเติมวันที่ให้อัตโนมัติเมื่อพิมพ์ปี แต่ยังแก้เองได้ถ้าปฏิทินจริงต่างออกไป
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
 /** คำนวณช่วงวันที่ตั้งต้นจากปี พ.ศ. คืนค่าเป็นรูปแบบที่ช่องเลือกวันที่ใช้ (ค.ศ.) */
 function defaultRange(buddhistYear: number) {
@@ -28,7 +28,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="rounded-lg bg-emerald-700 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-lg bg-brand-700 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังบันทึก..." : "เพิ่มปีบัญชี"}
     </button>
@@ -117,7 +117,7 @@ export function FiscalYearForm({ suggestedYear }: { suggestedYear: number }) {
         </p>
       )}
       {state.message && (
-        <p role="status" className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+        <p role="status" className="rounded-lg bg-brand-50 px-3 py-2 text-sm text-brand-800">
           {state.message}
         </p>
       )}

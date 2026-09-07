@@ -22,7 +22,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
 
   const links = [
     { href: "/dashboard", label: "ภาพรวม", show: menus.dashboard },
-    { href: "/indicators", label: "ตัวชี้วัด", show: menus.indicators },
+    { href: "/indicators", label: "ส่วนงานและหน่วยงาน", show: menus.indicators },
     { href: "/reports", label: "รายงานผล", show: menus.reports },
     { href: "/plans", label: "แผนดำเนินงาน", show: menus.plans },
     { href: "/admin", label: "ตั้งค่าระบบ", show: menus.admin },
@@ -31,7 +31,11 @@ export default async function MainLayout({ children }: { children: React.ReactNo
 
   return (
     <div className="min-h-screen">
-      <header className="border-b border-slate-200 bg-white">
+      {/* เส้นเหลืองบางๆ ด้านบน เป็นสีเน้นของธีม ใช้เฉพาะจุดแบบนี้
+          ไม่ใช้เป็นพื้นกว้าง เพราะตัวหนังสือบนพื้นเหลืองอ่านยาก */}
+      <div className="h-1 bg-accent-400" aria-hidden="true" />
+
+      <header className="border-b border-slate-200 bg-white shadow-sm">
         {/* relative จำเป็นสำหรับให้เมนูมือถือเลื่อนลงมาวางตำแหน่งถูกต้อง */}
         <div className="relative mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
           <MobileNav links={links} />

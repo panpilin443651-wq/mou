@@ -7,7 +7,7 @@ import type { FormState } from "@/actions/windows";
 // การ์ดตั้งค่าช่วงเวลาเปิด-ปิดของไตรมาสหนึ่ง พร้อมรายการขยายเวลาเฉพาะส่วนงาน
 
 const inputClass =
-  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+  "w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
 export type Exception = {
   id: string;
@@ -24,7 +24,7 @@ function SaveButton({ label }: { label: string }) {
     <button
       type="submit"
       disabled={pending}
-      className="rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังบันทึก..." : label}
     </button>
@@ -54,7 +54,7 @@ function Message({ state }: { state: FormState }) {
   }
   if (state.message) {
     return (
-      <p role="status" className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800">
+      <p role="status" className="rounded-lg bg-brand-50 px-3 py-2 text-sm text-brand-800">
         {state.message}
       </p>
     );
@@ -107,7 +107,7 @@ export function WindowCard({
         <span
           className={`rounded px-2 py-0.5 text-xs font-medium ${
             statusTone === "open"
-              ? "bg-emerald-50 text-emerald-800"
+              ? "bg-brand-50 text-brand-800"
               : "bg-amber-50 text-amber-800"
           }`}
         >
@@ -264,7 +264,7 @@ export function WindowCard({
           <button
             type="button"
             onClick={() => setShowException(true)}
-            className="mt-2 w-full rounded-lg border border-dashed border-slate-300 px-4 py-2.5 text-sm font-medium text-emerald-800 transition hover:border-emerald-600 hover:bg-emerald-50"
+            className="mt-2 w-full rounded-lg border border-dashed border-slate-300 px-4 py-2.5 text-sm font-medium text-brand-800 transition hover:border-brand-600 hover:bg-brand-50"
           >
             + ขยายเวลาให้ส่วนงานที่ขอผ่อนผัน
           </button>

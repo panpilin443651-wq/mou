@@ -10,7 +10,7 @@ import { copyIndicatorsAction, type FormState } from "@/actions/fiscal-years";
 type YearOption = { id: number; year: number; indicatorCount: number };
 
 const selectClass =
-  "w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+  "w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -18,7 +18,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="rounded-lg border border-emerald-700 px-5 py-2.5 text-sm font-medium text-emerald-800 transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-lg border border-brand-700 px-5 py-2.5 text-sm font-medium text-brand-800 transition hover:bg-brand-50 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังคัดลอก..." : "คัดลอกตัวชี้วัด"}
     </button>
@@ -103,7 +103,7 @@ export function CopyIndicatorsForm({ years }: { years: YearOption[] }) {
           {state.message && (
             <p
               role="status"
-              className="rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-800"
+              className="rounded-lg bg-brand-50 px-3 py-2 text-sm text-brand-800"
             >
               {state.message}
             </p>

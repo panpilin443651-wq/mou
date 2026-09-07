@@ -41,7 +41,7 @@ export default async function IndicatorPlanPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/plans" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
+        <Link href="/plans" className="inline-flex min-h-11 items-center text-sm text-brand-800 hover:underline">
           ← กลับไปรายการแผนการดำเนินงาน
         </Link>
 
@@ -76,7 +76,7 @@ export default async function IndicatorPlanPage({
                     : "")}
             </p>
           </div>
-          <span className="text-2xl font-bold tabular-nums text-emerald-800">
+          <span className="text-2xl font-bold tabular-nums text-brand-800">
             {progress.pct}%
           </span>
         </div>
@@ -91,7 +91,7 @@ export default async function IndicatorPlanPage({
             aria-label="ความคืบหน้าของแผน"
           >
             <div
-              className="h-full rounded-full bg-emerald-600 transition-all"
+              className="h-full rounded-full bg-brand-600 transition-all"
               style={{ width: `${progress.pct}%` }}
             />
           </div>

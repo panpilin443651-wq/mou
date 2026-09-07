@@ -15,7 +15,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full rounded-lg bg-emerald-700 px-4 py-2.5 font-medium text-white transition hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+      className="w-full rounded-lg bg-brand-700 px-4 py-2.5 font-medium text-white transition hover:bg-brand-800 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังเข้าสู่ระบบ..." : "เข้าสู่ระบบ"}
     </button>
@@ -39,7 +39,7 @@ export function LoginForm() {
           autoComplete="username"
           // inputMode ช่วยให้แป้นพิมพ์บนมือถือขึ้นปุ่ม @ ให้อัตโนมัติ
           inputMode="email"
-          className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
+          className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600"
         />
       </div>
 
@@ -53,7 +53,7 @@ export function LoginForm() {
           type="password"
           required
           autoComplete="current-password"
-          className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
+          className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-base outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600"
         />
       </div>
 

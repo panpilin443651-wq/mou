@@ -61,7 +61,7 @@ export default async function WindowsPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/admin" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
+        <Link href="/admin" className="inline-flex min-h-11 items-center text-sm text-brand-800 hover:underline">
           ← กลับไปหน้าตั้งค่าระบบ
         </Link>
         <h1 className="mt-2 text-xl font-bold sm:text-2xl">ช่วงเวลาเปิด-ปิดระบบ</h1>
@@ -84,7 +84,7 @@ export default async function WindowsPage({
               aria-current={y.id === selectedYear?.id ? "page" : undefined}
               className={
                 y.id === selectedYear?.id
-                  ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+                  ? "inline-flex min-h-11 items-center rounded-lg bg-brand-700 px-4 text-sm font-medium text-white"
                   : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
               }
             >
@@ -98,7 +98,7 @@ export default async function WindowsPage({
       {selectedYear === null ? (
         <p className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-600">
           ยังไม่มีปีบัญชีในระบบ กรุณาเพิ่มปีบัญชีก่อนที่หน้า{" "}
-          <Link href="/admin/fiscal-years" className="text-emerald-800 hover:underline">
+          <Link href="/admin/fiscal-years" className="text-brand-800 hover:underline">
             ปีบัญชี
           </Link>
         </p>

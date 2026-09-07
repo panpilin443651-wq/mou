@@ -139,7 +139,7 @@ export default async function ReportsPage({
                       <td className="px-3 py-2.5">
                         <Link
                           href={`/reports/${ind.id}/1`}
-                          className="-my-2.5 block py-3 text-emerald-800 underline-offset-2 hover:underline"
+                          className="-my-2.5 block py-3 text-brand-800 underline-offset-2 hover:underline"
                         >
                           {ind.name}
                         </Link>
@@ -151,7 +151,7 @@ export default async function ReportsPage({
                           <td key={q} className="whitespace-nowrap px-2 py-2.5 text-center">
                             <Link
                               href={`/reports/${ind.id}/${q}`}
-                              className="-my-2.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded text-xs font-medium transition hover:ring-1 hover:ring-emerald-600"
+                              className="-my-2.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded text-xs font-medium transition hover:ring-1 hover:ring-brand-600"
                               title={`กรอกผลไตรมาส ${q}`}
                             >
                               {r === undefined ? (

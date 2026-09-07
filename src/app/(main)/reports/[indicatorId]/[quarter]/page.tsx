@@ -76,7 +76,7 @@ export default async function ReportPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/reports" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
+        <Link href="/reports" className="inline-flex min-h-11 items-center text-sm text-brand-800 hover:underline">
           ← กลับไปรายการรายงานผล
         </Link>
 
@@ -107,7 +107,7 @@ export default async function ReportPage({
             aria-current={q === quarter ? "page" : undefined}
             className={
               q === quarter
-                ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+                ? "inline-flex min-h-11 items-center rounded-lg bg-brand-700 px-4 text-sm font-medium text-white"
                 : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
             }
           >
@@ -121,7 +121,7 @@ export default async function ReportPage({
       <div
         className={
           window.state === "OPEN"
-            ? "rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900"
+            ? "rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm text-brand-900"
             : "rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900"
         }
       >
@@ -220,8 +220,8 @@ export default async function ReportPage({
       </section>
 
       {isSubmitted && (
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
-          <div className="text-sm text-emerald-900">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-brand-200 bg-brand-50 p-4">
+          <div className="text-sm text-brand-900">
             <p className="font-medium">ส่งผลไตรมาส {quarter} แล้ว</p>
             <p className="mt-0.5">
               {report.submittedAt && formatThaiDateTime(report.submittedAt)}
@@ -282,7 +282,7 @@ export default async function ReportPage({
                             href={`/api/attachments/${f.id}`}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-sm text-emerald-800 underline-offset-2 hover:underline"
+                            className="text-sm text-brand-800 underline-offset-2 hover:underline"
                           >
                             {f.originalName}
                           </a>

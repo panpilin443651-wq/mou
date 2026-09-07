@@ -30,7 +30,7 @@ export default async function HomePage() {
         <div className="mt-8">
           <Link
             href="/login"
-            className="inline-block rounded-lg bg-emerald-700 px-5 py-2.5 font-medium text-white transition hover:bg-emerald-800"
+            className="inline-block rounded-lg bg-brand-700 px-5 py-2.5 font-medium text-white transition hover:bg-brand-800"
           >
             เข้าสู่ระบบ
           </Link>

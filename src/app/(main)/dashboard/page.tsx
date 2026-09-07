@@ -82,7 +82,7 @@ export default async function DashboardPage({
           aria-current={quarter === "latest" ? "page" : undefined}
           className={
             quarter === "latest"
-              ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+              ? "inline-flex min-h-11 items-center rounded-lg bg-brand-700 px-4 text-sm font-medium text-white"
               : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
           }
         >
@@ -95,7 +95,7 @@ export default async function DashboardPage({
             aria-current={quarter === q ? "page" : undefined}
             className={
               quarter === q
-                ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+                ? "inline-flex min-h-11 items-center rounded-lg bg-brand-700 px-4 text-sm font-medium text-white"
                 : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
             }
           >

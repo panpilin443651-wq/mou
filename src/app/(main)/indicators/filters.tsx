@@ -45,7 +45,7 @@ export function Filters({
   }
 
   const selectClass =
-    "w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600";
+    "w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none focus:border-brand-600 focus:ring-1 focus:ring-brand-600";
 
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

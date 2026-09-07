@@ -286,8 +286,15 @@ model Attachment {
   reportId String
   report   QuarterlyReport @relation(fields: [reportId], references: [id], onDelete: Cascade)
 
+  /// ระดับคะแนน 1-5 ที่ไฟล์นี้เป็นหลักฐานให้
+  /// MOU ของ กยท. กำหนดเงื่อนไขไว้แยกแต่ละระดับ หลักฐานจึงต้องแยกตามระดับด้วย
+  /// null = หลักฐานทั่วไปที่ไม่ผูกกับระดับใดระดับหนึ่ง
+  criteriaLevel Int?
+
   originalName String // ชื่อไฟล์เดิมที่ผู้ใช้อัปโหลด (ใช้ตอนดาวน์โหลด)
-  storagePath  String // เส้นทางไฟล์จริงบนดิสก์ (ชื่อสุ่ม กันชื่อชนกัน)
+  /// URL ของไฟล์บน Vercel Blob (ไม่ได้เก็บไฟล์ไว้บนเซิร์ฟเวอร์เอง
+  /// เพราะ Vercel ล้างไฟล์ที่เขียนลงดิสก์ทุกครั้งที่ deploy ใหม่)
+  storagePath  String
   mimeType     String
   sizeBytes    Int
 
@@ -296,6 +303,7 @@ model Attachment {
   uploadedAt   DateTime @default(now())
 
   @@index([reportId])
+  @@index([reportId, criteriaLevel])
 }
 
 // ============================================================================

@@ -125,6 +125,42 @@ async function main() {
     }
   }
 
+  // --------------------------------------------------------------------------
+  // ล้างข้อความเก่าที่ไม่มีใน MOU แล้ว
+  // --------------------------------------------------------------------------
+  // ถ้าปรับวิธีดึงข้อความแล้วพบว่าเกณฑ์เคยถูกใส่ผิดตัวชี้วัด รอบใหม่จะย้ายไปข้อที่ถูก
+  // แต่ข้อความที่ค้างอยู่ที่ข้อเดิมจะไม่ถูกทับ เพราะรอบนี้ไม่มีข้อมูลของข้อนั้น
+  // จึงต้องคืนค่ากลับเป็นข้อความตั้งต้น ไม่งั้นระบบจะยังแสดงเกณฑ์ของข้ออื่นค้างไว้
+  let cleared = 0;
+  const clearedList: string[] = [];
+  const allIndicators = await db.indicator.findMany({
+    where: { fiscalYearId: fiscalYear.id },
+    include: {
+      department: { select: { code: true } },
+      criteria: { orderBy: { level: "asc" } },
+    },
+  });
+
+  for (const indicator of allIndicators) {
+    const levels = data[indicator.department.code]?.[indicator.code]?.levels ?? {};
+    for (const c of indicator.criteria) {
+      if (levels[String(c.level)]) continue;
+      // ข้อความตั้งต้นคือรูปแบบ "ระดับ N = ค่า หน่วย" ถ้าเป็นแบบนั้นอยู่แล้วไม่ต้องทำอะไร
+      if (/^ระดับ\s*[1-5]\s*=\s*/.test(c.description)) continue;
+
+      const reset = `ระดับ ${c.level} = ${c.targetValue ?? "-"} ${indicator.unit}`;
+      if (apply) {
+        await db.scoreCriteria.update({ where: { id: c.id }, data: { description: reset } });
+      }
+      cleared++;
+      if (clearedList.length < 10) {
+        clearedList.push(
+          `${indicator.department.code} ข้อ ${indicator.code} ระดับ ${c.level}: "${c.description.slice(0, 50)}"`
+        );
+      }
+    }
+  }
+
   console.log(apply ? "=== บันทึกลงฐานข้อมูลแล้ว ===" : "=== ทดลองรัน ยังไม่บันทึก ===");
   console.log(`เกณฑ์ที่จะอัปเดต            ${updated} รายการ`);
   console.log(`ยืนยันถูกต้องด้วยตัวเลข     ${verified} รายการ`);
@@ -132,6 +168,12 @@ async function main() {
   console.log(`หาตัวชี้วัดในระบบไม่เจอ      ${notFound} รายการ`);
   console.log(`เติมคำจำกัดความให้ตัวชี้วัด  ${definitionsFilled} รายการ`);
   console.log(`เติมตารางคะแนนย่อย          ${rubricsFilled} รายการ`);
+  console.log(`ล้างข้อความที่ค้างจากรอบก่อน  ${cleared} รายการ`);
+
+  if (clearedList.length) {
+    console.log("\nข้อความที่ถูกล้าง (แสดง 10 รายการแรก):");
+    for (const c of clearedList) console.log("  " + c);
+  }
 
   if (conflicts.length) {
     console.log("\nรายการที่ตัวเลขไม่ตรง (แสดง 15 รายการแรก):");

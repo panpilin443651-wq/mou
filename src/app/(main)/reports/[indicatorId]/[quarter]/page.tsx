@@ -5,7 +5,7 @@ import { canSubmitReport, canViewDepartment } from "@/lib/permissions";
 import { db } from "@/lib/db";
 import { saveReportAction, reopenReportAction } from "@/actions/reports";
 import { QUARTERS, QUARTER_MONTHS } from "@/lib/plan";
-import { scoreClass, scoreLabel } from "@/lib/scoring";
+import { isPlaceholderCriteria, scoreClass, scoreLabel } from "@/lib/scoring";
 import { formatThaiDateTime } from "@/lib/datetime";
 import { fileKindLabel, formatBytes } from "@/lib/attachments";
 import { deleteAttachmentAction } from "@/actions/attachments";
@@ -202,6 +202,21 @@ export default async function ReportPage({
         <p className="mt-2 text-xs text-slate-500">
           เกณฑ์คะแนนของตัวชี้วัดนี้ (หน่วย: {indicator.unit})
         </p>
+
+        {/* ข้อความเกณฑ์จาก MOU - คนกรอกผลต้องรู้ว่าแต่ละระดับต้องทำอะไรถึงจะผ่าน
+            ไม่ใช่เห็นแค่ตัวเลข โดยเฉพาะตัวชี้วัดแบบ "ระดับความสำเร็จ" */}
+        {indicator.criteria.some((c) => !isPlaceholderCriteria(c.description)) && (
+          <dl className="mt-4 space-y-2 border-t border-slate-200 pt-4">
+            {indicator.criteria.map((c) =>
+              isPlaceholderCriteria(c.description) ? null : (
+                <div key={c.id} className="flex flex-col gap-1 sm:flex-row sm:gap-3">
+                  <dt className="shrink-0 text-sm font-medium sm:w-20">ระดับ {c.level}</dt>
+                  <dd className="text-sm leading-relaxed text-slate-700">{c.description}</dd>
+                </div>
+              )
+            )}
+          </dl>
+        )}
       </section>
 
       {isSubmitted && (

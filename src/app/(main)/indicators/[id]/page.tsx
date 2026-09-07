@@ -9,6 +9,7 @@ import {
 } from "@/lib/permissions";
 import { db } from "@/lib/db";
 import { PLAN_STATUS_CLASS, PLAN_STATUS_LABEL } from "@/lib/plan";
+import { isPlaceholderCriteria } from "@/lib/scoring";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "รายละเอียดตัวชี้วัด | ระบบรายงานผล MOU" };
@@ -42,6 +43,9 @@ export default async function IndicatorDetailPage({
 
   const canManage = canManageIndicators(user);
   const isLowerBetter = indicator.direction === "LOWER_IS_BETTER";
+
+  // แสดงคอลัมน์เกณฑ์ตาม MOU เฉพาะเมื่อมีข้อความจริงอย่างน้อยหนึ่งระดับ
+  const hasCriteriaText = indicator.criteria.some((c) => !isPlaceholderCriteria(c.description));
 
   const facts = [
     { label: "ส่วนงาน", value: `${indicator.department.code} ${indicator.department.name}` },
@@ -119,24 +123,36 @@ export default async function IndicatorDetailPage({
           <table className="w-full min-w-[24rem] text-sm">
             <thead>
               <tr className="border-b border-slate-200 text-left text-slate-600">
-                <th className="px-4 py-2.5 font-medium sm:px-5">ระดับคะแนน</th>
-                <th className="px-4 py-2.5 text-right font-medium sm:px-5">
+                <th className="whitespace-nowrap px-4 py-2.5 font-medium sm:px-5">ระดับคะแนน</th>
+                <th className="whitespace-nowrap px-3 py-2.5 text-right font-medium">
                   ค่าเกณฑ์ ({indicator.unit})
                 </th>
+                {hasCriteriaText && (
+                  <th className="px-4 py-2.5 font-medium sm:px-5">เกณฑ์ตาม MOU</th>
+                )}
               </tr>
             </thead>
             <tbody>
               {indicator.criteria.map((c) => (
                 <tr key={c.id} className="border-b border-slate-100 last:border-0">
-                  <td className="px-4 py-2.5 sm:px-5">
+                  <td className="whitespace-nowrap px-4 py-2.5 sm:px-5">
                     ระดับ {c.level}
                     {c.level === 5 && (
                       <span className="ml-2 text-xs text-emerald-700">คะแนนเต็ม</span>
                     )}
                   </td>
-                  <td className="px-4 py-2.5 text-right tabular-nums sm:px-5">
+                  <td className="whitespace-nowrap px-3 py-2.5 text-right tabular-nums">
                     {c.targetValue ?? "-"}
                   </td>
+                  {hasCriteriaText && (
+                    <td className="px-4 py-2.5 text-slate-700 sm:px-5">
+                      {isPlaceholderCriteria(c.description) ? (
+                        <span className="text-slate-400">ไม่มีข้อความกำกับใน MOU</span>
+                      ) : (
+                        c.description
+                      )}
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>

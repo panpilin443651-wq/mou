@@ -84,6 +84,18 @@ export function calcScoreLevel(
   return best;
 }
 
+/**
+ * ข้อความเกณฑ์บางรายการเป็นข้อความที่ระบบสร้างเองตอนใส่ข้อมูลตั้งต้น
+ * เช่น "ระดับ 3 = 3 ระดับ" ซึ่งไม่มีประโยชน์กับผู้อ่าน
+ * ต่างจากข้อความจริงที่ดึงมาจาก MOU เช่น "สินค้าคงคลัง คงเหลือไม่เกินร้อยละ 29.74"
+ *
+ * ใช้ฟังก์ชันนี้กรองก่อนแสดงผลเสมอ จะได้ไม่โชว์ข้อความที่ไม่ได้บอกอะไร
+ */
+export function isPlaceholderCriteria(description: string | null | undefined): boolean {
+  if (!description) return true;
+  return /^ระดับ\s*[1-5]\s*=\s*/.test(description.trim());
+}
+
 /** ข้อความอธิบายคะแนนสำหรับแสดงบนหน้าจอ */
 export function scoreLabel(scoreLevel: number | null): string {
   if (scoreLevel === null) return "ยังไม่ได้ประเมิน";

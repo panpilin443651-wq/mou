@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { requireUser } from "@/lib/session";
 import { ROLE_LABEL } from "@/lib/permissions";
+import { db } from "@/lib/db";
 import {
   getDashboardData,
   parseQuarterFilter,
@@ -8,6 +9,10 @@ import {
 } from "@/lib/dashboard";
 import { QUARTERS, QUARTER_MONTHS } from "@/lib/plan";
 import { ScoreBar } from "./score-bar";
+import {
+  departmentScores,
+  MOU_SCORE_MAX,
+} from "@/lib/department-scores";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "ภาพรวม | ระบบรายงานผล MOU" };
@@ -23,6 +28,22 @@ export default async function DashboardPage({
 
   const data = await getDashboardData(user, quarter);
   const showComparison = data.departments.length > 1;
+
+  // รหัสส่วนงานของผู้ใช้ ใช้ทั้งไฮไลต์แถวและจำกัดสิ่งที่มองเห็น
+  const myDepartment = user.departmentId
+    ? await db.department.findUnique({
+        where: { id: user.departmentId },
+        select: { code: true },
+      })
+    : null;
+  const myCode = myDepartment?.code ?? null;
+
+  // ผู้รับผิดชอบส่วนงานเห็นเฉพาะแถวของตัวเอง ตามกฎการมองเห็นเดียวกับทั้งระบบ
+  // ส่วนกลางและผู้บริหารเห็นทุกแถวเพื่อเปรียบเทียบกัน
+  const visibleScores =
+    user.role === "DEPT_USER"
+      ? departmentScores.departments.filter((d) => d.code === myCode)
+      : departmentScores.departments;
 
   const tiles = [
     {
@@ -124,6 +145,75 @@ export default async function DashboardPage({
           ไม่ใช่คะแนนสุดท้าย ส่วนงานที่ส่งน้อยกว่าจะดูเหมือนได้คะแนนต่ำกว่าโดยอัตโนมัติ
         </p>
       )}
+
+      {/* คะแนนภาพรวมของแต่ละส่วนงาน ตามไฟล์สรุปของส่วนกลาง
+          แยกจากตัวเลขที่ระบบคำนวณเอง เพราะเป็นคนละชุดข้อมูล
+          ถ้าเอามาปนกันโดยไม่บอก ผู้อ่านจะแยกไม่ออกว่าเลขไหนมาจากไหน */}
+      <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
+        <div className="border-b border-slate-200 px-4 py-3 sm:px-5">
+          <h2 className="font-semibold">คะแนนภาพรวมของแต่ละส่วนงาน</h2>
+          <p className="mt-0.5 text-sm text-slate-600">
+            ปีบัญชี {departmentScores.fiscalYear} · จากไฟล์สรุปของส่วนกลาง{" "}
+            <span className="text-slate-500">({departmentScores.source})</span>
+          </p>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[46rem] text-sm">
+            <thead>
+              <tr className="border-b border-slate-200 text-left text-slate-600">
+                <th className="px-4 py-2.5 font-medium sm:px-5">ลำดับ</th>
+                <th className="px-3 py-2.5 font-medium">ส่วนงาน</th>
+                <th className="w-64 px-3 py-2.5 font-medium">
+                  คะแนนถ่วงน้ำหนัก (MOU) เต็ม 5
+                </th>
+                <th className="px-4 py-2.5 text-right font-medium sm:px-5">
+                  ตัวชี้วัดองค์กร (PA)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {visibleScores.map((d) => (
+                <tr
+                  key={d.rank}
+                  className={`border-b border-slate-100 last:border-0 ${d.code === myCode ? "bg-accent-50" : ""}`}
+                >
+                  <td className="px-4 py-2.5 tabular-nums text-slate-500 sm:px-5">{d.rank}</td>
+                  <td className="whitespace-nowrap px-3 py-2.5">
+                    {d.sourceName}
+                    {!d.inSystem && (
+                      <span className="ml-2 rounded bg-slate-100 px-1.5 py-0.5 text-xs text-slate-600">
+                        ไม่มีในระบบแล้ว
+                      </span>
+                    )}
+                    {d.code === myCode && (
+                      <span className="ml-2 rounded bg-accent-200 px-1.5 py-0.5 text-xs font-medium text-accent-900">
+                        ส่วนงานของคุณ
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-3 py-2.5">
+                    <div className="flex items-center gap-3">
+                      <ScoreBar value={d.mouScore} max={MOU_SCORE_MAX} label={d.sourceName} />
+                      <span className="w-12 shrink-0 text-right tabular-nums">
+                        {d.mouScore.toFixed(3)}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums sm:px-5">
+                    {d.paScore === null ? "–" : d.paScore.toFixed(5)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="border-t border-slate-200 px-4 py-3 text-xs text-slate-500 sm:px-5">
+          ตัวเลขชุดนี้มาจากไฟล์สรุปของส่วนกลาง ไม่ได้คำนวณจากผลที่กรอกในระบบ
+          จึงไม่เปลี่ยนตามการกรอกผลรายไตรมาส · ส่วนตัวเลขที่ระบบคำนวณเองอยู่ในหัวข้อถัดไป
+        </p>
+      </section>
 
       <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-200 px-4 py-3 sm:px-5">

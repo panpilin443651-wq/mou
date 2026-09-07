@@ -19,7 +19,8 @@ import { formatThaiDateTime } from "@/lib/datetime";
 
 export const dynamic = "force-dynamic";
 
-const HEADER_FILL = "FF047857"; // emerald-700 สีเดียวกับปุ่มหลักของระบบ
+// สีหัวข้อของระบบ ใช้ให้ตรงกับหน้าเว็บ ไฟล์ Word และไฟล์ Excel ของแผนดำเนินงาน
+const HEADER_FILL = "FF028090";
 
 function styleHeader(row: ExcelJS.Row) {
   row.font = { bold: true, color: { argb: "FFFFFFFF" } };

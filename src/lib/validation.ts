@@ -67,6 +67,51 @@ export const indicatorSchema = z.object({
 
 export type IndicatorInput = z.infer<typeof indicatorSchema>;
 
+export const userSchema = z
+  .object({
+    email: z
+      .string()
+      .trim()
+      .min(1, "กรุณากรอกอีเมล")
+      .email("รูปแบบอีเมลไม่ถูกต้อง")
+      .transform((v) => v.toLowerCase()),
+    name: z.string().trim().min(2, "กรุณากรอกชื่อ-นามสกุล").max(150, "ชื่อยาวเกินไป"),
+    role: z.enum(["ADMIN", "DEPT_USER", "EXECUTIVE"]),
+    departmentId: z
+      .string()
+      .trim()
+      .transform((v) => (v === "" ? null : v))
+      .nullable(),
+    isActive: z.enum(["true", "false"]).transform((v) => v === "true"),
+  })
+  .refine((v) => v.role !== "DEPT_USER" || v.departmentId !== null, {
+    // ถ้า DEPT_USER ไม่มีสังกัด จะมองไม่เห็นข้อมูลอะไรเลยและใช้งานไม่ได้
+    message: "ผู้รับผิดชอบส่วนงานต้องระบุสังกัด",
+    path: ["departmentId"],
+  });
+
+/** รหัสผ่านที่ ADMIN ตั้งให้ตอนสร้างบัญชีหรือรีเซ็ต */
+export const initialPasswordSchema = z
+  .string()
+  .min(8, "รหัสผ่านต้องยาวอย่างน้อย 8 ตัวอักษร")
+  .max(72, "รหัสผ่านยาวเกินไป");
+
+export const fiscalYearSchema = z
+  .object({
+    year: z
+      .string()
+      .trim()
+      .refine((v) => /^\d{4}$/.test(v), "ปีบัญชีต้องเป็นตัวเลข 4 หลัก (พ.ศ.)")
+      .transform(Number)
+      .refine((v) => v >= 2500 && v <= 2700, "ปีบัญชีต้องอยู่ระหว่าง 2500-2700 (พ.ศ.)"),
+    startDate: z.string().min(1, "กรุณาเลือกวันเริ่มต้นปีบัญชี"),
+    endDate: z.string().min(1, "กรุณาเลือกวันสิ้นสุดปีบัญชี"),
+  })
+  .refine((v) => v.startDate < v.endDate, {
+    message: "วันสิ้นสุดต้องอยู่หลังวันเริ่มต้น",
+    path: ["endDate"],
+  });
+
 export const passwordSchema = z
   .object({
     currentPassword: z.string().min(1, "กรุณากรอกรหัสผ่านปัจจุบัน"),

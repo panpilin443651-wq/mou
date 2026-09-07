@@ -85,7 +85,7 @@ export function PlanFilters({
         <option value="">ทุกตัวชี้วัด</option>
         <option value="none">ยังไม่ได้วางแผน</option>
         <option value="has">วางแผนแล้ว</option>
-        <option value="done">แผนเสร็จครบทุกกิจกรรม</option>
+        <option value="target">มีตารางเป้าหมายตัวชี้วัดแล้ว</option>
       </select>
     </div>
   );

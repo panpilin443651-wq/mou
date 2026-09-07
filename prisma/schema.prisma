@@ -48,10 +48,11 @@ enum ReportStatus {
   SUBMITTED // ส่งแล้ว (ไม่มีขั้นตอนอนุมัติ - ส่งแล้วถือว่าจบ)
 }
 
-enum PlanStatus {
-  PENDING // ยังไม่เริ่ม
-  IN_PROGRESS // กำลังดำเนินการ
-  DONE // ดำเนินการแล้วเสร็จ
+/// สองส่วนของแบบฟอร์มแผนดำเนินงาน (เอกสารแนบ 4)
+/// แบบฟอร์มแยกตารางเป็นสองส่วนที่มีคอลัมน์เหมือนกัน แต่คนละความหมาย
+enum PlanSection {
+  TARGET // ส่วนที่ 1 "เป้าหมายตัวชี้วัด" - ผลงานที่ต้องทำให้ได้ตามตัวชี้วัด
+  STEP // ส่วนที่ 2 "ติดตามการดำเนินงานตามแผน" - ขั้นตอน/กิจกรรมที่ทำเพื่อให้ถึงเป้าหมาย
 }
 
 // ============================================================================
@@ -175,9 +176,10 @@ model Indicator {
 
   status IndicatorStatus @default(ACTIVE)
 
-  criteria ScoreCriteria[]
-  plans    ActionPlan[]
-  reports  QuarterlyReport[]
+  criteria   ScoreCriteria[]
+  plans      ActionPlan[]
+  planHeader PlanHeader?
+  reports    QuarterlyReport[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -218,24 +220,68 @@ model ScoreCriteria {
   @@unique([indicatorId, level])
 }
 
-/// แผนการดำเนินงานของตัวชี้วัด (รายกิจกรรม แยกตามไตรมาส)
+/// ส่วนหัวของแบบฟอร์มแผนดำเนินงาน (เอกสารแนบ 4) - 1 ตัวชี้วัดมีได้ 1 แถว
+///
+/// แยกออกจาก Indicator เพราะสองส่วนนี้เป็นของส่วนงาน ไม่ใช่ของส่วนกลาง
+/// ส่วนงานแก้ผู้รับผิดชอบและงบประมาณของแผนตัวเองได้ แต่แก้ตัวชี้วัดไม่ได้
+model PlanHeader {
+  id String @id @default(cuid())
+
+  indicatorId String    @unique
+  indicator   Indicator @relation(fields: [indicatorId], references: [id], onDelete: Cascade)
+
+  /// "ผู้รับผิดชอบตัวชี้วัด" เช่น "การยางแห่งประเทศไทยเขตภาคเหนือ/กองแผนและวิชาการ"
+  owner  String?
+  /// "งบประมาณ" เก็บเป็นข้อความเพราะแบบฟอร์มเขียนรวมหน่วยไว้ เช่น "71,000 บาท"
+  budget String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+/// หนึ่งบรรทัดในตารางแผนดำเนินงานตามแบบฟอร์มเอกสารแนบ 4
+///
+/// แบบฟอร์มจริงเป็นตารางรายเดือน 12 เดือน โดย 1 รายการกินกระดาษ 2 บรรทัด
+/// บรรทัดบน = "แผน" บรรทัดล่าง = "ผล" ในฐานข้อมูลจึงเก็บเป็น 1 แถว
+/// แล้วมีตัวเลขรายเดือนสองชุด ไม่ได้แยกเป็นสองแถวเหมือนที่เห็นบนกระดาษ
 model ActionPlan {
   id String @id @default(cuid())
 
   indicatorId String
   indicator   Indicator @relation(fields: [indicatorId], references: [id], onDelete: Cascade)
 
-  /// ไตรมาสที่วางแผนจะทำ 1-4
-  quarter        Int
-  activity       String // ชื่อกิจกรรม
-  expectedOutput String? // ผลผลิตที่คาดหวัง
-  status         PlanStatus @default(PENDING)
-  sortOrder      Int        @default(0)
+  /// อยู่ตารางบน (เป้าหมายตัวชี้วัด) หรือตารางล่าง (ขั้นตอนการดำเนินงาน)
+  section   PlanSection @default(STEP)
+  /// ลำดับที่แสดงในตาราง (คอลัมน์แรกของแบบฟอร์ม)
+  sortOrder Int         @default(0)
+
+  /// ข้อความในคอลัมน์ "เป้าหมายตัวชี้วัด" หรือ "ขั้นตอนการดำเนินงาน" แล้วแต่ section
+  title       String
+  /// "ค่าเป้าหมาย" ของรายการนี้ - null ได้ เพราะบางรายการยังไม่กำหนด
+  targetValue Float?
+  /// "หน่วยนับ" เช่น "ไร่", "ครั้ง", "รายงาน", "ร้อยละ"
+  unit        String?
+
+  /// ตัวเลขรายเดือน 12 ช่อง เรียงตามปีงบประมาณ ต.ค. → ก.ย.
+  /// รูปแบบ: (number | null)[] ยาว 12 · null = เว้นว่างไว้ (ไม่ใช่ศูนย์)
+  /// เก็บเป็น Json เพราะเป็นตารางที่ผู้ใช้กรอกทั้งแถวพร้อมกัน
+  /// ไม่เคยถูกค้นหาหรือรวมยอดที่ฝั่งฐานข้อมูล จึงไม่คุ้มที่จะแตกเป็น 12 คอลัมน์
+  planMonths   Json
+  actualMonths Json
+
+  /// "สาเหตุที่ไม่สามารถดำเนินการได้ตามเป้าหมาย/ตามแผน"
+  causeNote        String?
+  /// "การดำเนินการแก้ไข"
+  correctiveAction String?
+  /// "หลักฐานประกอบผลการดำเนินงาน" - เขียนอ้างอิงเป็นข้อความ เช่น "เอกสารแนบ 1"
+  evidence         String?
+  /// "คำอธิบายเพิ่มเติม (ถ้ามี)"
+  note             String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([indicatorId, quarter])
+  @@index([indicatorId, section, sortOrder])
 }
 
 // ============================================================================

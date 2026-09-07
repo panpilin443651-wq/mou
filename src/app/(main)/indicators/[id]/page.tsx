@@ -8,7 +8,7 @@ import {
   canViewDepartment,
 } from "@/lib/permissions";
 import { db } from "@/lib/db";
-import { PLAN_STATUS_CLASS, PLAN_STATUS_LABEL } from "@/lib/plan";
+import { PLAN_SECTION_ITEM_LABEL, summarizeRow, toMonths } from "@/lib/plan";
 import { isPlaceholderCriteria } from "@/lib/scoring";
 
 export const dynamic = "force-dynamic";
@@ -30,7 +30,7 @@ export default async function IndicatorDetailPage({
       department: true,
       fiscalYear: true,
       criteria: { orderBy: { level: "asc" } },
-      plans: { orderBy: [{ quarter: "asc" }, { sortOrder: "asc" }] },
+      plans: { orderBy: [{ section: "asc" }, { sortOrder: "asc" }] },
       reports: { orderBy: { quarter: "asc" } },
     },
   });
@@ -232,7 +232,7 @@ export default async function IndicatorDetailPage({
 
       <section className="rounded-xl border border-slate-200 bg-white shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3 sm:px-5">
-          <h2 className="font-semibold">แผนการดำเนินงาน</h2>
+          <h2 className="font-semibold">แผนดำเนินงาน</h2>
           <Link
             href={`/plans/${indicator.id}`}
             className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-3 text-sm font-medium transition hover:bg-slate-50"
@@ -242,26 +242,33 @@ export default async function IndicatorDetailPage({
         </div>
         {indicator.plans.length === 0 ? (
           <p className="px-4 py-6 text-sm text-slate-600 sm:px-5">
-            ยังไม่มีแผนการดำเนินงาน
+            ยังไม่มีแผนดำเนินงาน
           </p>
         ) : (
           <ul className="divide-y divide-slate-100">
-            {indicator.plans.map((p) => (
-              <li
-                key={p.id}
-                className="flex flex-wrap items-start justify-between gap-2 px-4 py-3 text-sm sm:px-5"
-              >
-                <span className="min-w-0 flex-1">
-                  <span className="text-slate-500">{QUARTER_LABEL[p.quarter - 1]}</span> ·{" "}
-                  {p.activity}
-                </span>
-                <span
-                  className={`shrink-0 rounded px-2 py-0.5 text-xs font-medium ${PLAN_STATUS_CLASS[p.status]}`}
+            {indicator.plans.map((p) => {
+              // แสดงความก้าวหน้าทั้งปี (ผลรวม 12 เดือน เทียบแผนรวม 12 เดือน)
+              // ไม่ใช่ยอดสะสมถึงเดือนนี้ เพราะหน้านี้เป็นภาพรวมของตัวชี้วัด
+              const s = summarizeRow(
+                { planMonths: toMonths(p.planMonths), actualMonths: toMonths(p.actualMonths) },
+                12
+              );
+              return (
+                <li
+                  key={p.id}
+                  className="flex flex-wrap items-start justify-between gap-2 px-4 py-3 text-sm sm:px-5"
                 >
-                  {PLAN_STATUS_LABEL[p.status]}
-                </span>
-              </li>
-            ))}
+                  <span className="min-w-0 flex-1">
+                    <span className="text-slate-500">{PLAN_SECTION_ITEM_LABEL[p.section]}</span> ·{" "}
+                    {p.title || "(ยังไม่ได้ตั้งชื่อรายการ)"}
+                  </span>
+                  <span className="shrink-0 tabular-nums text-slate-600">
+                    {s.actualYear.toLocaleString("th-TH")} / {s.planYear.toLocaleString("th-TH")}{" "}
+                    {p.unit ?? ""}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>

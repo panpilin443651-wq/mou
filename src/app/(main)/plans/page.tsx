@@ -3,7 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { requireUser } from "@/lib/session";
 import { departmentScope } from "@/lib/permissions";
 import { db } from "@/lib/db";
-import { QUARTERS, planProgress } from "@/lib/plan";
+import { PLAN_SECTIONS, PLAN_SECTION_ITEM_LABEL, formatPct, summarizeSection, toMonths } from "@/lib/plan";
 import { PlanFilters } from "./filters";
 
 export const dynamic = "force-dynamic";
@@ -23,16 +23,16 @@ export default async function PlansPage({
   const page = Math.max(1, Number(sp.page ?? "1") || 1);
   const canPickDepartment = user.role !== "DEPT_USER";
 
-  // กรองตามสถานะของแผน
-  //   none = ยังไม่มีกิจกรรมเลย  ·  has = มีอย่างน้อย 1 กิจกรรม
-  //   done = มีกิจกรรมและทุกกิจกรรมเสร็จหมดแล้ว
+  // กรองตามความคืบหน้าของการวางแผน
+  //   none = ยังไม่ได้กรอกแผนเลย  ·  has = เริ่มกรอกแล้วอย่างน้อย 1 บรรทัด
+  //   target = มีตาราง "เป้าหมายตัวชี้วัด" แล้ว (ส่วนที่ขาดบ่อยที่สุด)
   const stateFilter: Prisma.IndicatorWhereInput =
     sp.state === "none"
       ? { plans: { none: {} } }
       : sp.state === "has"
         ? { plans: { some: {} } }
-        : sp.state === "done"
-          ? { AND: [{ plans: { some: {} } }, { plans: { every: { status: "DONE" } } }] }
+        : sp.state === "target"
+          ? { plans: { some: { section: "TARGET" } } }
           : {};
 
   // departmentScope บังคับให้ DEPT_USER เห็นเฉพาะของตัวเองเสมอ
@@ -59,7 +59,7 @@ export default async function PlansPage({
       where,
       include: {
         department: { select: { code: true, name: true } },
-        plans: { select: { quarter: true, status: true } },
+        plans: { select: { section: true, planMonths: true, actualMonths: true } },
       },
       orderBy: [{ department: { sortOrder: "asc" } }, { code: "asc" }],
       skip: (page - 1) * PAGE_SIZE,
@@ -91,7 +91,7 @@ export default async function PlansPage({
         <h1 className="text-xl font-bold sm:text-2xl">แผนการดำเนินงาน</h1>
         <p className="mt-1 text-sm text-slate-600">
           {fiscalYear ? `ปีบัญชี ${fiscalYear.year}` : "ยังไม่ได้ตั้งปีบัญชี"} · พบ{" "}
-          {total.toLocaleString("th-TH")} ตัวชี้วัด · เลือกตัวชี้วัดเพื่อวางแผนกิจกรรมรายไตรมาส
+          {total.toLocaleString("th-TH")} ตัวชี้วัด · เลือกตัวชี้วัดเพื่อกรอกแผนรายเดือนตามแบบฟอร์มเอกสารแนบ 4
         </p>
       </div>
 
@@ -115,17 +115,24 @@ export default async function PlansPage({
                   <th className="px-4 py-2.5 font-medium">ส่วนงาน</th>
                   <th className="px-3 py-2.5 font-medium">ข้อ</th>
                   <th className="px-3 py-2.5 font-medium">ชื่อตัวชี้วัด</th>
-                  {QUARTERS.map((q) => (
-                    <th key={q} className="px-2 py-2.5 text-center font-medium">
-                      ไตรมาส {q}
+                  {PLAN_SECTIONS.map((section) => (
+                    <th key={section} className="px-2 py-2.5 text-center font-medium">
+                      {PLAN_SECTION_ITEM_LABEL[section]}
                     </th>
                   ))}
-                  <th className="px-4 py-2.5 text-right font-medium">คืบหน้า</th>
+                  <th className="px-4 py-2.5 text-right font-medium">ผลเทียบแผนทั้งปี</th>
                 </tr>
               </thead>
               <tbody>
                 {indicators.map((ind) => {
-                  const progress = planProgress(ind.plans);
+                  // ใช้สูตรเดียวกับหน้าแผนและไฟล์ Excel เทียบผลทั้งปีกับแผนทั้งปี
+                  const summary = summarizeSection(
+                    ind.plans.map((p) => ({
+                      planMonths: toMonths(p.planMonths),
+                      actualMonths: toMonths(p.actualMonths),
+                    })),
+                    12
+                  );
                   return (
                     <tr
                       key={ind.id}
@@ -144,29 +151,25 @@ export default async function PlansPage({
                         </Link>
                       </td>
 
-                      {QUARTERS.map((q) => {
-                        const count = ind.plans.filter((p) => p.quarter === q).length;
+                      {PLAN_SECTIONS.map((section) => {
+                        const count = ind.plans.filter((p) => p.section === section).length;
                         return (
                           <td
-                            key={q}
+                            key={section}
                             className="whitespace-nowrap px-2 py-2.5 text-center tabular-nums"
                           >
-                            {count === 0 ? (
-                              <span className="text-slate-300">–</span>
-                            ) : (
-                              count
-                            )}
+                            {count === 0 ? <span className="text-slate-300">–</span> : count}
                           </td>
                         );
                       })}
 
                       <td className="whitespace-nowrap px-4 py-2.5 text-right tabular-nums">
-                        {progress.total === 0 ? (
+                        {summary.count === 0 ? (
                           <span className="rounded bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-800">
                             ยังไม่วางแผน
                           </span>
                         ) : (
-                          `${progress.done}/${progress.total}`
+                          formatPct(summary.avgYearPct)
                         )}
                       </td>
                     </tr>

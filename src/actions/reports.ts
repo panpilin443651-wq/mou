@@ -60,6 +60,13 @@ export async function saveReportAction(
     narrative: formData.get("narrative") ?? "",
     scoreOverride: formData.get("scoreOverride") ?? "",
     scoreNote: formData.get("scoreNote") ?? "",
+    responsible: formData.get("responsible") ?? "",
+    objective: formData.get("objective") ?? "",
+    keyProjects: formData.get("keyProjects") ?? "",
+    progressReport: formData.get("progressReport") ?? "",
+    problems: formData.get("problems") ?? "",
+    supportFactors: formData.get("supportFactors") ?? "",
+    obstacleFactors: formData.get("obstacleFactors") ?? "",
   });
   if (!parsed.success) return { error: firstError(parsed.error) };
   const input = parsed.data;
@@ -89,6 +96,13 @@ export async function saveReportAction(
     scoreOverridden: overridden,
     scoreNote: input.scoreNote,
     narrative: input.narrative,
+    responsible: input.responsible,
+    objective: input.objective,
+    keyProjects: input.keyProjects,
+    progressReport: input.progressReport,
+    problems: input.problems,
+    supportFactors: input.supportFactors,
+    obstacleFactors: input.obstacleFactors,
     status: submitting ? ("SUBMITTED" as const) : ("DRAFT" as const),
     submittedAt: submitting ? new Date() : null,
     submittedById: submitting ? user.id : null,

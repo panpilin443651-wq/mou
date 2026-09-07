@@ -33,9 +33,9 @@ export default async function MainLayout({ children }: { children: React.ReactNo
     <div className="min-h-screen">
       {/* เส้นเหลืองบางๆ ด้านบน เป็นสีเน้นของธีม ใช้เฉพาะจุดแบบนี้
           ไม่ใช้เป็นพื้นกว้าง เพราะตัวหนังสือบนพื้นเหลืองอ่านยาก */}
-      <div className="h-1 bg-accent-400" aria-hidden="true" />
+      <div className="h-1 bg-accent-400 print:hidden" aria-hidden="true" />
 
-      <header className="border-b border-slate-200 bg-white shadow-sm">
+      <header className="border-b border-slate-200 bg-white shadow-sm print:hidden">
         {/* relative จำเป็นสำหรับให้เมนูมือถือเลื่อนลงมาวางตำแหน่งถูกต้อง */}
         <div className="relative mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
           <MobileNav links={links} />
@@ -71,7 +71,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
         </div>
       </header>
 
-      <main className="mx-auto max-w-6xl px-4 py-6">{children}</main>
+      <main className="mx-auto max-w-6xl px-4 py-6 print:max-w-none print:p-0">{children}</main>
     </div>
   );
 }

@@ -17,6 +17,40 @@ const inputClass =
 
 type Criteria = { level: number; targetValue: number | null };
 
+/** ช่องกรอกข้อความยาวของแบบฟอร์มรายงานผล ใช้หน้าตาเดียวกันทุกช่อง */
+function LongField({
+  id,
+  label,
+  rows,
+  defaultValue,
+  hint,
+  placeholder,
+}: {
+  id: string;
+  label: string;
+  rows: number;
+  defaultValue: string;
+  hint?: string;
+  placeholder?: string;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium">
+        {label}
+      </label>
+      <textarea
+        id={id}
+        name={id}
+        rows={rows}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
+        className={inputClass}
+      />
+      {hint && <p className="mt-1 text-xs text-slate-500">{hint}</p>}
+    </div>
+  );
+}
+
 function Buttons({ isSubmitted }: { isSubmitted: boolean }) {
   const { pending } = useFormStatus();
   return (
@@ -63,6 +97,13 @@ export function ReportForm({
     narrative: string;
     scoreOverride: string;
     scoreNote: string;
+    responsible: string;
+    objective: string;
+    keyProjects: string;
+    progressReport: string;
+    problems: string;
+    supportFactors: string;
+    obstacleFactors: string;
   };
 }) {
   const [state, formAction] = useActionState(action, { error: null } as FormState);
@@ -153,6 +194,80 @@ export function ReportForm({
             defaultValue={initial.narrative}
             placeholder="อธิบายว่าทำอะไรไปบ้าง เจออุปสรรคอะไร และแก้ไขอย่างไร"
             className={inputClass}
+          />
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------
+          หัวข้อตามแบบฟอร์มรายงานผลของ กยท. (เอกสารแนบ 3)
+          เรียงลำดับและใช้ถ้อยคำเดียวกับแบบฟอร์ม เพื่อให้พิมพ์ออกมาแล้ว
+          ตรงกับเอกสารที่เคยส่งกันอยู่แล้ว ผู้กรอกจะได้ไม่ต้องเรียนรู้ใหม่
+          --------------------------------------------------------------- */}
+      <section className="space-y-4 rounded-xl border border-slate-200 bg-white p-5">
+        <div>
+          <h2 className="font-semibold">รายละเอียดตามแบบฟอร์มรายงานผล</h2>
+          <p className="mt-1 text-sm text-slate-600">
+            หัวข้อชุดนี้ตรงกับแบบฟอร์มรายงานผลของ กยท. เมื่อกรอกแล้วดาวน์โหลดเป็นไฟล์ Word
+            หรือสั่งพิมพ์เป็น PDF ได้ทันที
+          </p>
+        </div>
+
+        <LongField
+          id="responsible"
+          label="1. ผู้รับผิดชอบ"
+          rows={2}
+          defaultValue={initial.responsible}
+          placeholder="ชื่อผู้รับผิดชอบตัวชี้วัด / ตำแหน่ง / ส่วนงาน"
+        />
+
+        <LongField
+          id="objective"
+          label="2. วัตถุประสงค์"
+          rows={3}
+          defaultValue={initial.objective}
+          placeholder="วัตถุประสงค์ของตัวชี้วัดนี้"
+        />
+
+        <LongField
+          id="keyProjects"
+          label="3. แผนงาน / โครงการ / การดำเนินงานสำคัญ"
+          rows={5}
+          defaultValue={initial.keyProjects}
+          hint="ยกมาเฉพาะที่สำคัญ พร้อมรายละเอียดกิจกรรมพอสังเขป"
+          placeholder="เช่น ดำเนินการจัดอบรม... ระหว่างเดือน... มีผู้เข้าร่วม... ราย"
+        />
+
+        <LongField
+          id="progressReport"
+          label="4. รายงานผลการดำเนินงานตามแผนงาน/โครงการ/กิจกรรมดังกล่าว"
+          rows={5}
+          defaultValue={initial.progressReport}
+          placeholder="ผลที่เกิดขึ้นจริงจากแผนงาน/โครงการข้างต้น"
+        />
+
+        <LongField
+          id="problems"
+          label="5. ปัญหาอุปสรรค และการแก้ไข"
+          rows={4}
+          defaultValue={initial.problems}
+          hint="ระบุเฉพาะปัญหาสำคัญ (ถ้ามี) พร้อมบอกว่าแก้ไขอย่างไร"
+          placeholder="ปัญหาที่พบ... แก้ไขโดย..."
+        />
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <LongField
+            id="supportFactors"
+            label="6.1 ปัจจัยที่สนับสนุน"
+            rows={3}
+            defaultValue={initial.supportFactors}
+            placeholder="ปัจจัยภายในหรือภายนอกที่ช่วยให้งานสำเร็จ"
+          />
+          <LongField
+            id="obstacleFactors"
+            label="6.2 ปัจจัยที่เป็นปัญหา/อุปสรรค"
+            rows={3}
+            defaultValue={initial.obstacleFactors}
+            placeholder="ปัจจัยภายในหรือภายนอกที่เป็นอุปสรรค"
           />
         </div>
       </section>

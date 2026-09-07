@@ -133,6 +133,15 @@ export const actionPlanSchema = z.object({
   status: z.enum(["PENDING", "IN_PROGRESS", "DONE"]),
 });
 
+/** ช่องข้อความยาวที่เว้นว่างได้ ถ้าว่างเก็บเป็น null ไม่ใช่ "" */
+const longText = (fieldName: string, max: number) =>
+  z
+    .string()
+    .trim()
+    .max(max, `${fieldName}ยาวเกินไป (ไม่เกิน ${max.toLocaleString("th-TH")} ตัวอักษร)`)
+    .transform((v) => (v === "" ? null : v))
+    .nullable();
+
 /**
  * ผลการดำเนินงานรายไตรมาส (ข้อ 4, 5)
  *
@@ -155,6 +164,15 @@ export const reportSchema = z
       .max(3000, "คำอธิบายยาวเกินไป")
       .transform((v) => (v === "" ? null : v))
       .nullable(),
+
+    // ช่องตามแบบฟอร์มรายงานผลของ กยท. (เอกสารแนบ 3)
+    responsible: longText("ผู้รับผิดชอบ", 300),
+    objective: longText("วัตถุประสงค์", 2000),
+    keyProjects: longText("แผนงาน/โครงการ", 4000),
+    progressReport: longText("รายงานผลการดำเนินงาน", 4000),
+    problems: longText("ปัญหาอุปสรรคและการแก้ไข", 4000),
+    supportFactors: longText("ปัจจัยที่สนับสนุน", 2000),
+    obstacleFactors: longText("ปัจจัยที่เป็นปัญหา/อุปสรรค", 2000),
     /** เว้นว่าง = ใช้คะแนนที่ระบบคำนวณให้ */
     scoreOverride: z
       .string()

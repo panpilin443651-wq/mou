@@ -90,12 +90,26 @@ export default async function ReportPage({
         </p>
 
         {/* แยกออกมาเป็นปุ่มแทนลิงก์กลางประโยค เพื่อให้กดถูกง่ายบนมือถือ */}
-        <Link
-          href={`/indicators/${indicator.id}`}
-          className="mt-2 inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-4 text-sm font-medium transition hover:bg-slate-50"
-        >
-          ดูรายละเอียดตัวชี้วัด
-        </Link>
+        <div className="mt-2 flex flex-wrap gap-2">
+          <Link
+            href={`/indicators/${indicator.id}`}
+            className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
+          >
+            ดูรายละเอียดตัวชี้วัด
+          </Link>
+          <Link
+            href={`/reports/${indicator.id}/${quarter}/print`}
+            className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
+          >
+            พิมพ์ / บันทึกเป็น PDF
+          </Link>
+          <a
+            href={`/api/export/report/${indicator.id}/${quarter}`}
+            className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
+          >
+            ดาวน์โหลดเป็น Word
+          </a>
+        </div>
       </div>
 
       {/* สลับไตรมาสได้จากตรงนี้ ไม่ต้องย้อนกลับไปหน้ารายการ */}
@@ -339,6 +353,13 @@ export default async function ReportPage({
             narrative: report?.narrative ?? "",
             scoreOverride: report?.scoreOverridden ? String(report.scoreLevel ?? "") : "",
             scoreNote: report?.scoreNote ?? "",
+            responsible: report?.responsible ?? "",
+            objective: report?.objective ?? "",
+            keyProjects: report?.keyProjects ?? "",
+            progressReport: report?.progressReport ?? "",
+            problems: report?.problems ?? "",
+            supportFactors: report?.supportFactors ?? "",
+            obstacleFactors: report?.obstacleFactors ?? "",
           }}
         />
       ) : (

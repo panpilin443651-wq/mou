@@ -61,7 +61,7 @@ export default async function IndicatorDetailPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/indicators" className="text-sm text-emerald-800 hover:underline">
+        <Link href="/indicators" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
           ← กลับไปรายการตัวชี้วัด
         </Link>
 
@@ -154,7 +154,7 @@ export default async function IndicatorDetailPage({
           <h2 className="font-semibold">ผลการดำเนินงานรายไตรมาส</h2>
           <Link
             href={`/reports/${indicator.id}/1`}
-            className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium transition hover:bg-slate-50"
+            className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-3 text-sm font-medium transition hover:bg-slate-50"
           >
             {canSubmitReport(user, indicator.departmentId) ? "กรอกผล" : "ดูผลทั้งหมด"}
           </Link>
@@ -196,7 +196,7 @@ export default async function IndicatorDetailPage({
           <h2 className="font-semibold">แผนการดำเนินงาน</h2>
           <Link
             href={`/plans/${indicator.id}`}
-            className="rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium transition hover:bg-slate-50"
+            className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-3 text-sm font-medium transition hover:bg-slate-50"
           >
             {canManagePlan(user, indicator.departmentId) ? "จัดการแผน" : "ดูแผนทั้งหมด"}
           </Link>

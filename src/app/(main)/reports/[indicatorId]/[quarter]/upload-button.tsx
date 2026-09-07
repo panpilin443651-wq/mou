@@ -88,7 +88,7 @@ export function UploadButton({
         type="button"
         disabled={busy}
         onClick={() => inputRef.current?.click()}
-        className="rounded-lg border border-dashed border-slate-300 px-4 py-2 text-sm font-medium text-emerald-800 transition hover:border-emerald-600 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex min-h-11 items-center rounded-lg border border-dashed border-slate-300 px-4 text-sm font-medium text-emerald-800 transition hover:border-emerald-600 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {busy ? "กำลังอัปโหลด..." : `+ แนบไฟล์หลักฐานระดับ ${criteriaLevel}`}
       </button>

@@ -82,8 +82,8 @@ export default async function DashboardPage({
           aria-current={quarter === "latest" ? "page" : undefined}
           className={
             quarter === "latest"
-              ? "rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white"
-              : "rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium transition hover:bg-slate-50"
+              ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+              : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
           }
         >
           ล่าสุดที่ส่งแล้ว
@@ -95,8 +95,8 @@ export default async function DashboardPage({
             aria-current={quarter === q ? "page" : undefined}
             className={
               quarter === q
-                ? "rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white"
-                : "rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium transition hover:bg-slate-50"
+                ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+                : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
             }
           >
             ไตรมาส {q}

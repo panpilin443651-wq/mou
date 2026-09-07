@@ -41,7 +41,7 @@ export default async function IndicatorPlanPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/plans" className="text-sm text-emerald-800 hover:underline">
+        <Link href="/plans" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
           ← กลับไปรายการแผนการดำเนินงาน
         </Link>
 
@@ -51,14 +51,16 @@ export default async function IndicatorPlanPage({
 
         <p className="mt-1 text-sm text-slate-600">
           {indicator.department.code} {indicator.department.name} · ปีบัญชี{" "}
-          {indicator.fiscalYear.year} ·{" "}
-          <Link
-            href={`/indicators/${indicator.id}`}
-            className="text-emerald-800 hover:underline"
-          >
-            ดูรายละเอียดตัวชี้วัด
-          </Link>
+          {indicator.fiscalYear.year}
         </p>
+
+        {/* แยกออกมาเป็นปุ่มแทนลิงก์กลางประโยค เพื่อให้กดถูกง่ายบนมือถือ */}
+        <Link
+          href={`/indicators/${indicator.id}`}
+          className="mt-2 inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-4 text-sm font-medium transition hover:bg-slate-50"
+        >
+          ดูรายละเอียดตัวชี้วัด
+        </Link>
       </div>
 
       <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">

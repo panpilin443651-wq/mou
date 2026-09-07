@@ -38,7 +38,7 @@ export default async function UsersPage({
     <div className="space-y-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <Link href="/admin" className="text-sm text-emerald-800 hover:underline">
+          <Link href="/admin" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
             ← กลับไปหน้าตั้งค่าระบบ
           </Link>
           <h1 className="mt-2 text-xl font-bold sm:text-2xl">จัดการผู้ใช้</h1>
@@ -98,7 +98,7 @@ export default async function UsersPage({
                 <td className="px-4 py-2.5">
                   <Link
                     href={`/admin/users/${u.id}`}
-                    className="text-emerald-800 underline-offset-2 hover:underline"
+                    className="-my-2.5 block py-3 text-emerald-800 underline-offset-2 hover:underline"
                   >
                     {u.name}
                   </Link>

@@ -14,7 +14,7 @@ function Button({ year }: { year: number }) {
     <button
       type="submit"
       disabled={pending}
-      className="whitespace-nowrap rounded-lg border border-emerald-700 px-3 py-1.5 text-sm font-medium text-emerald-800 transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
+      className="whitespace-nowrap rounded-lg border border-emerald-700 min-h-11 px-3 py-2 text-sm font-medium text-emerald-800 transition hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending ? "กำลังเปลี่ยน..." : `ใช้ปี ${year}`}
     </button>

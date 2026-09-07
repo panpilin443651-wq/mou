@@ -49,7 +49,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+                className="flex min-h-11 items-center rounded-lg px-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
               >
                 {link.label}
               </Link>
@@ -59,7 +59,7 @@ export default async function MainLayout({ children }: { children: React.ReactNo
           <form action={logoutAction}>
             <button
               type="submit"
-              className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-50"
+              className="min-h-11 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium transition hover:bg-slate-50"
             >
               ออกจากระบบ
             </button>

@@ -56,7 +56,7 @@ export default async function EditIndicatorPage({
       <div>
         <Link
           href={`/indicators/${indicator.id}`}
-          className="text-sm text-emerald-800 hover:underline"
+          className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline"
         >
           ← กลับไปหน้ารายละเอียด
         </Link>

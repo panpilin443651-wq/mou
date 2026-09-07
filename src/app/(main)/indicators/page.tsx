@@ -136,7 +136,7 @@ export default async function IndicatorsPage({
                     <td className="px-3 py-2.5">
                       <Link
                         href={`/indicators/${ind.id}`}
-                        className="text-emerald-800 underline-offset-2 hover:underline"
+                        className="-my-2.5 block py-3 text-emerald-800 underline-offset-2 hover:underline"
                       >
                         {ind.name}
                       </Link>
@@ -171,7 +171,7 @@ export default async function IndicatorsPage({
                 {page > 1 && (
                   <Link
                     href={pageLink(page - 1)}
-                    className="rounded-lg border border-slate-300 px-3 py-2 transition hover:bg-slate-50"
+                    className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-4 transition hover:bg-slate-50"
                   >
                     ก่อนหน้า
                   </Link>
@@ -179,7 +179,7 @@ export default async function IndicatorsPage({
                 {page < totalPages && (
                   <Link
                     href={pageLink(page + 1)}
-                    className="rounded-lg border border-slate-300 px-3 py-2 transition hover:bg-slate-50"
+                    className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-4 transition hover:bg-slate-50"
                   >
                     ถัดไป
                   </Link>

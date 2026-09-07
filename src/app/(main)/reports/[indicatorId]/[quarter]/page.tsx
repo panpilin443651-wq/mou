@@ -76,7 +76,7 @@ export default async function ReportPage({
   return (
     <div className="space-y-5">
       <div>
-        <Link href="/reports" className="text-sm text-emerald-800 hover:underline">
+        <Link href="/reports" className="inline-flex min-h-11 items-center text-sm text-emerald-800 hover:underline">
           ← กลับไปรายการรายงานผล
         </Link>
 
@@ -86,14 +86,16 @@ export default async function ReportPage({
 
         <p className="mt-1 text-sm text-slate-600">
           {indicator.department.code} {indicator.department.name} · ปีบัญชี{" "}
-          {indicator.fiscalYear.year} ·{" "}
-          <Link
-            href={`/indicators/${indicator.id}`}
-            className="text-emerald-800 hover:underline"
-          >
-            ดูรายละเอียดตัวชี้วัด
-          </Link>
+          {indicator.fiscalYear.year}
         </p>
+
+        {/* แยกออกมาเป็นปุ่มแทนลิงก์กลางประโยค เพื่อให้กดถูกง่ายบนมือถือ */}
+        <Link
+          href={`/indicators/${indicator.id}`}
+          className="mt-2 inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-4 text-sm font-medium transition hover:bg-slate-50"
+        >
+          ดูรายละเอียดตัวชี้วัด
+        </Link>
       </div>
 
       {/* สลับไตรมาสได้จากตรงนี้ ไม่ต้องย้อนกลับไปหน้ารายการ */}
@@ -105,8 +107,8 @@ export default async function ReportPage({
             aria-current={q === quarter ? "page" : undefined}
             className={
               q === quarter
-                ? "rounded-lg bg-emerald-700 px-4 py-2 text-sm font-medium text-white"
-                : "rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium transition hover:bg-slate-50"
+                ? "inline-flex min-h-11 items-center rounded-lg bg-emerald-700 px-4 text-sm font-medium text-white"
+                : "inline-flex min-h-11 items-center rounded-lg border border-slate-300 bg-white px-4 text-sm font-medium transition hover:bg-slate-50"
             }
           >
             ไตรมาส {q}
